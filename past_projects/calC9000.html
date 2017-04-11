@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>CalC9000</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Orbitron');
+			*{
+				margin: 0;
+				padding: 0;
+				font-family: 'Orbitron', sans-serif;
+			}
+			body{
+				background-color: #193434;
+			}
+			header{
+				text-align: center;
+				width: 100%;
+				height: 6em;
+			}
+			header h1{
+				font-size: 4em;
+				font-weight: 100;
+				padding: 0.2em;
+				line-height: 1.5em;
+				color: #808080;	
+			}
+			div{
+				background-color: #53acac;
+				margin: 0 auto;
+				width: 45%;
+			}
+			form{
+				background-color: black;
+				margin-top: 0.5em;
+				border: 0.1em solid gray;
+				outline-style: solid;
+				outline-color: #808080;
+			}
+			input[type=text]{
+				background-color: #ebfafa;
+				width: 100%;
+				height: 1.5em;
+				font-size: 3.5em;
+				disabled: disabled;
+			}
+			input[type=button]{
+				width: 24.2%;
+				height: 1.3em;
+				font-size: 3.3em;
+				color: #214545;
+				background-color: #33cccc;
+				margin-top: 0.05em;
+			}
+			input[type=button]:hover{
+				color: #fff;
+				cursor: pointer
+			}
+		</style>
+	</head>
+	<body>
+		<header><h1>CalC-9000</h1></header>
+		<div>
+			<form name="calc9000">
+				<input type="text" id="output"/>	
+				<input type="button" id="one" value="1"/>
+				<input type="button" id="two" value="2"/>
+				<input type="button" id="three" value="3"/>
+				<input type="button" id="add" value="+"/>
+				<input type="button" id="four" value="4"/>
+				<input type="button" id="five" value="5"/>
+				<input type="button" id="six" value="6"/>
+				<input type="button" id="subs" value='-'/>
+				<input type="button" id="seven" value="7"/>
+				<input type="button" id="eight" value="8"/>
+				<input type="button" id="nine" value="9"/>
+				<input type="button" id="mult" value="*"/>
+				<input type="button" id="zero" value="0"/>
+				<input type="button" id="dot" value="."/>
+				<input type="button" id="result" value="="/>
+				<input type="button" id="percent" value="/"/>
+				<input type="button" id="clear" value="c"/>
+				<input type="button" id="del" value="Del"/>
+			</form>
+		</div>
+		<script type="text/javascript">
+			document.getElementById('output').readOnly = true;
+		
+			document.getElementById('seven').addEventListener('click', function(){
+				var sevenVal = document.getElementById('seven').value;
+				document.getElementById('output').value += sevenVal;
+			});
+			
+			document.getElementById('eight').addEventListener('click', function(){
+				var eightVal = document.getElementById('eight').value;
+				document.getElementById('output').value += eightVal;
+			});
+			
+			document.getElementById('nine').addEventListener('click', function(){
+				var nineVal = document.getElementById('nine').value;
+				document.getElementById('output').value += nineVal;
+			});
+			
+			document.getElementById('percent').addEventListener('click', function(){
+				var percentVal = document.getElementById('percent').value;
+				document.getElementById('output').value += percentVal;
+			});
+			
+			document.getElementById('four').addEventListener('click', function(){
+				var fourVal = document.getElementById('four').value;
+				document.getElementById('output').value += fourVal;
+			});
+			
+			document.getElementById('five').addEventListener('click', function(){
+				var fiveVal = document.getElementById('five').value;
+				document.getElementById('output').value += fiveVal;
+			});
+			
+			document.getElementById('six').addEventListener('click', function(){
+				var sixVal = document.getElementById('six').value;
+				document.getElementById('output').value += sixVal;
+			});
+			
+			document.getElementById('mult').addEventListener('click', function(){
+				var multVal = document.getElementById('mult').value;
+				document.getElementById('output').value += multVal;
+			});
+			
+			document.getElementById('one').addEventListener('click', function(){
+				var oneVal = document.getElementById('one').value;
+				document.getElementById('output').value += oneVal;
+			});
+			
+			document.getElementById('two').addEventListener('click', function(){
+				var twoVal = document.getElementById('two').value;
+				document.getElementById('output').value += twoVal;
+			});
+			
+			document.getElementById('three').addEventListener('click', function(){
+				var threeVal = document.getElementById('three').value;
+				document.getElementById('output').value += threeVal;
+			});
+			
+			document.getElementById('add').addEventListener('click', function(){
+				var addVal = document.getElementById('add').value;
+				document.getElementById('output').value += addVal;
+			});
+			
+			document.getElementById('zero').addEventListener('click', function(){
+				var zeroVal = document.getElementById('zero').value;
+				document.getElementById('output').value += zeroVal;
+			});
+			
+			document.getElementById('dot').addEventListener('click', function(){
+				var dotVal = document.getElementById('dot').value;
+				document.getElementById('output').value += dotVal;
+			});
+			
+			document.getElementById('subs').addEventListener('click', function(){
+				var subsVal = document.getElementById('subs').value;
+				document.getElementById('output').value += subsVal;
+			});
+			
+			document.getElementById('clear').addEventListener('click', function(){
+				document.getElementById('output').value = '';
+			});
+			
+			document.getElementById('del').addEventListener('click', function(){
+				var outputCurVal = document.getElementById('output').value;
+				//slide off end of outputCurVal
+				var sliceOutputCurVal = outputCurVal.slice(0, -1);
+				
+				document.getElementById('output').value = sliceOutputCurVal;
+				
+				//alert(x);
+			});
+			
+			document.getElementById('result').addEventListener('click', evalThis);
+			
+			function evalThis(){
+				var calResult = eval(output.value);
+				//alert(x);
+				document.getElementById('output').value = calResult;
+			};
+		</script>
+	</body>
+</html>

@@ -1,0 +1,199 @@
+/*CSS RESET
+   http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+/*table, caption, tbody, tfoot, thead, tr, th, td,*/
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*~~~~~~~~~~~-------~~~~~End of CSS RESET~~~~~~--------~~~~~~~*/
+
+body{
+	font-family: "Tahoma", "Geneva", sans-serif;
+	font-weight: 900;
+}
+#header{
+	background-color: #34495e;
+	color: #ffffff;
+	/*----sticks to top-----*/
+	position: fixed;
+	top: 0;
+	width: 100%;
+	/*----end of Sticks to top-----*/
+}
+#header h1{
+	font-size: 1em;
+	display: inline-block;
+	padding: 0.5em;
+}
+#back-home{
+	float: right;
+}
+#header a{
+	text-decoration: none;
+	color: #ffffff;
+}
+#header a:hover{
+	color: #FFDD00;
+}
+#container{
+	width: 100%;
+	margin: 0 auto;
+}
+#learn-by-doing{
+	background-color: #FFDD00;
+	color: #2c3e50;
+}
+#ex-name-section h1{
+	background-color: #FFDD00;
+	color: #2c3e50;
+	text-decoration: underline;
+}
+#learn-by-doing h1{
+	padding: 3em;
+	text-align: center;
+	font-size: 3em;
+}
+#ex-name-section h1{
+	padding: 3em;
+	text-align: center;
+	font-size: 3em;
+}
+#exercises-columns{
+	background-color: #16a085;
+	padding: 5em;
+	text-align: center;
+}
+#exercises-area{
+	background-color: #16a085;
+	padding: 5em;
+	text-align: center;
+}
+#exercises-columns h1{
+	padding: 0 4em 1em 4em;
+	font-size: 3em;
+	color: #ffffff;
+}
+#exercises-area h1{
+	padding: 0 4em 1em 4em;
+	font-size: 3em;
+	color: #ffffff;
+}
+#exercises-columns ul{
+	font-size: 1.2em;
+	display: table;
+	margin: 0 auto;
+}
+#exercises-area ul{
+	font-size: 1.2em;
+	display: table;
+	margin: 0 auto;
+}
+#exercises-columns ul li{ 
+	display: inline-block;
+	border: 0 solid #16a085;
+	border-radius: 0.3em;
+	padding: 4em;
+	background-color: #2ecc71;
+	margin: 0.3em; 
+	width: 8%;
+	text-align: center;
+}
+#exercises-columns ul a{ 
+	text-decoration: none;
+	color: #ffffff;
+	/*Increases area of text link*/
+	display: inline-block;        
+	z-index: 1;         
+	margin: -3em;
+	/*End increase area of text link
+	padding: 3em;*/
+}
+.ex-q{ 
+	display: inline-block;
+	border: 0 solid #16a085;
+	width: 95%;
+	padding: 1em;
+	margin: 1px; 
+	text-align: left;
+	background-color: #cccccc;
+	color: #2c3e50;
+	cursor: pointer;
+}
+.ex-a{ 
+	display: inline-block;
+	border: 0 solid #16a085;
+	width: 95%;
+	padding: 1em;
+	margin: 1px; 
+	text-align: left;
+	background-color: #ffffff;
+	color: #2c3e50;
+	overflow: none;
+}
+#ex-q ul li:hover{ 
+	cursor: pointer;
+}/*
+#exercises-columns ul li:hover{ 
+	cursor: pointer;
+}*/
+#exercises-columns ul a:hover{
+	color: #FFDD00;
+}
+footer{
+	background-color: #bdc3c7;
+	padding: 5em;
+}
+footer p{
+	text-align: center;
+	color: #ffffff;
+	padding: 0.1em;
+}
+/*hides nested li ul*/
+#exercises-columns ul ul{ 
+	display: none;
+}
+#img-div li  img{
+	width: 12%;
+	height: 115px;
+}

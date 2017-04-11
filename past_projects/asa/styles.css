@@ -1,0 +1,112 @@
+*{
+	margin:0px;
+	padding: 0px;
+}	
+body{
+	font-family: 'Tahoma', sans-serif; 
+	color: #666; 
+	background-color: #FFFFFF;
+}
+#main_header{
+	width: 100%;
+	line-height: 330%;
+	height: 65px;
+	text-align: left;
+	background-color: #fff;
+	color: #fff;
+	padding-top:7px;
+}
+header h3{
+	color: #009900;
+	font-size: 1.3em;
+}
+nav{
+	background-color: #339933;
+	text-align: center;
+	width: 100%;
+	height: 45px;
+	font-size: 0.9em;
+	line-height: 320%;
+}
+nav ul{
+	list-style: none;
+}
+nav ul li{
+	display: inline-block;
+	font-weight: bolder;
+	
+}
+nav a{
+	color: #fff;
+	text-decoration: none;
+	padding-right: 15px; 
+}
+nav a:hover{
+	color: #99FF33;
+	text-decoration: underline;
+}
+hr{	
+	margin-bottom: .5em;
+}
+#container{
+	background-color: #fff;
+	width: 55%;
+	height: 650px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px; 
+}
+#container p{
+	font-size: 0.9em;
+	padding-top: 9px;
+}
+#slider{
+	height: 230px;
+	background-color: #ccc;
+	margin-bottom: 10px;
+}
+#main_content{
+	float: left;
+	width: 75%;
+	margin-bottom: 5px;
+}
+aside{
+	float: right;
+	border-left: 1px solid #ccc;
+	padding-left: 10px;
+	width: 20%;
+}
+aside h4{
+	color: #339933;
+}
+footer{
+	background-color: #339933;
+	text-align: center;
+	width: 100%;
+	height: 30px;
+	font-size: 0.8em;
+	line-height: 160%;
+	clear: both;
+}
+footer p{
+	color: #fff;
+}
+/*-----------------------Drop down Menu-------------------------*/
+nav ul li:hover ul{
+	display: block;
+	background-color: #336699;
+
+}
+nav ul ul{
+	display: none;
+	position: absolute;
+	width: 11%;
+}
+nav ul ul li:hover a:hover{
+		background-color: #336699;
+}
+nav ul ul li{
+	display: block;
+	text-align: left;
+	padding-left: 5px;
+}

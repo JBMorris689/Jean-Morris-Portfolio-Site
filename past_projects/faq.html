@@ -1,0 +1,87 @@
+<!doctype>
+<html lang="eng">
+	<head>
+		<meta charset="utf-8"/>
+		<title>jQuery FAQ</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			body{
+				background-color: #005c99;
+			}
+			header{
+				padding: 1em;
+				color: #e6f5ff;
+				text-align: center;
+			}
+			header h1{
+				font-size: 3.0em;
+			}
+			hr{
+				border-top: 5px solid #ccebff;
+				border-bottom: 5px solid  #4db8ff;
+			}
+			div{
+				width: 55%;
+				margin: 0 auto;
+			}
+			main ul li{
+				list-style-type: none;
+				padding: 0.1em;
+			}
+			.q{
+				background-color: #ccebff;
+				border-bottom: 2px solid #4db8ff;
+				font-size: 2em;
+				font-weight: 400;
+				cursor: pointer;
+				padding: 0.5em;
+			}
+			.q:before{
+				content: "\00bb  ";
+			}
+			.a{
+				background-color: #e6f5ff;
+				font-size: 1.5em;
+				font-style: italic;
+				padding: 0.5em;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>jQuery FAQ</h1>
+			<p><i>Learn by Doing</i></p><hr/>
+		</header>
+		<div>	
+			<main>
+				<ul>
+					<li class="q">Some good question to ask?</li>
+					<li class="a">A great answer to that question</li>
+					<li class="q">Another good question to ask?</li>
+					<li class="a">A great answer to that question</li>
+					<li class="q">A good question to ask?</li>
+					<li class="a">A great answer to that question</li>
+					<li class="q">Another good question to ask?</li>
+					<li class="a">A great answer to that question</li>
+					<li class="q">Some good question to ask?</li>
+					<li class="a">A great answer to that question</li>
+					<li class="q">Some good question to ask?</li>
+					<li class="a">A great answer to that question</li>
+				</ul>
+			</main>
+		</div>	
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.a').hide();
+				
+				$('.q').on('click', (function(){
+					$(this).next().slideToggle().siblings('.a').slideUp();
+				}));
+			});
+		</script>
+	</body>
+</html>

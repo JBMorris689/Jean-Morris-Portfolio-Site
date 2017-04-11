@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="eng">
+	<head>
+		<title>W3 Resourse JQ Exercises</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<media name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style>
+			#bhq{
+				background-color: #ffcfcf;
+				height: 5em;
+				width: 40%;
+				
+			}
+			#box3{
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li class="site-name"><a href="index.html">W3 Resources jQuery Exercises</a></li>
+					<li class="home"><a href="index.html">Home</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section id="learn-jquery-ex">
+			<h1>Learn<br/> By Doing</h1>
+		</section>
+		<!--<div id="container">-->
+			<section id="exercises">
+				<h2>jQuery-Effect Exercises</h2>
+				<dl>
+					<dt>1. Animate an element, by changing its height and width.</dt>
+					<dd>
+						<div id="bhq"></div><br/>
+						<button id="ahw">Click to animate</button>
+						<script type="text/javascript">							
+							$(document).ready(function(){
+								//q1
+								$('#ahw').click(function(){
+									$('#bhq').animate({width: '145px', height: '145px'});
+								});
+								//q2
+								$('#sta').click(function(){
+									$('#box').animate({height: '45px', width: '45px'}, 2000);
+								});
+								$('#sto').click(function(){
+									$('#box').stop();
+								});
+								
+								$('#res').click(function(){
+									$('#box').css({'height': '100px', 'width': '100px'});
+								});
+								//q3
+								$('#sta2').click(function(){
+									$('#box2').animate({height: '45px', width: '45px'}, 2000).delay(2000);
+									$('#box2').animate({height: '145px', width: '145px'}, 2000);
+									$('#box2').animate({height: '65px', width: '65px'}, 2000).delay(1000);
+									$('#box2').animate({height: '245px', width: '245px'}, 2000);
+								});
+								$('#sto2').click(function(){
+									$('#box2').stop();
+								});
+								//q4
+								$('#fo').click(function(){
+									$('#ioeffect').fadeOut(3000);
+								});
+								$('#fi').click(function(){
+									$('#ioeffect').fadeIn(3000);
+								});
+								//q5
+								$('#fp').click(function(){
+									$(this).fadeTo('slow', 0.50);
+								});
+								//q6
+								$('#ft').click(function(){
+									$('#box3').fadeToggle();
+								});
+								
+							});//end of doc.ready()
+						</script>
+					</dd>
+					<dt>2. Stop an animation.</dt>
+					<dd>
+						<button id="sta">Start Animate</button>
+						<button id="sto">Stop Animate</button>
+						<button id="res">Reset</button>
+						<div id="box" style="background:#5858FA;height:100px;width:100px;margin:6px;"></div>  
+					</dd>
+					<dt>3. Set a timer to delay execution of subsequent items in the queue.</dt>
+					<dd>
+						<button id="sta2">Start Animate</button>
+						<button id="sto2">Stop Animate</button>
+						<div id="box2" style="background:#4587CC;height:100px;width:100px;margin:6px;"></div> 
+					</dd>
+					<dt>4. Fade in and fade out all division elements.</dt>
+					<dd>
+						<div id="ioeffect" style="background:#2E9AFE;width:100%;">My Effect is fadeOut Effect</div><br/>
+						<button id="fo">Fade Out (3 Second)</button>
+						<button id="fi">Fade In (3 Second)</button>
+					</dd>
+					<dt>5. Animates a paragraph to fade to an specified opacity (complete the animation within 500 milliseconds).</dt>
+					<dd><p id="fp">Click this paragraph to see it fade.</p></dd>
+					<dt>6Toggle between fading in and fading out different boxes.</dt>
+					<dd>
+						<div id="box3" style="width:100px;height:100px;background-color:#42D5A9;"></div><br/>
+						<button id="ft">Click to Toggle</button>
+					</dd>
+					
+					
+				</dl>
+			</section>
+			<footer>
+				<p>Copyright &copy; 2017 | Designed and Coded by Jean Morris | Exercises by w3resource.com</p>
+			</footer>
+		<!--</div>-->
+	</body>
+</html>

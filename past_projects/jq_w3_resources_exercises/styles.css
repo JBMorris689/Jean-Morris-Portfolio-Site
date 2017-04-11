@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded');
+@import url('https://fonts.googleapis.com/css?family=Pontano+Sans');
+
+/*CSS RESET
+   http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+/*table, caption, tbody, tfoot, thead, tr, th, td,*/
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*~~~~~~~~~~~-------~~~~~End of CSS RESET~~~~~~--------~~~~~~~*/
+html, body{
+	height: 100%;
+}
+h1, h2, h3, h4, .ex-q{
+	font-family: Stint Ultra Expanded; 
+}
+p, a, li, .ex-a{
+	font-family: Pontano Sans;
+}
+header{
+	background-color: #34495e;
+	padding: 1em;
+	height: 2%;
+	/*----sticks to top-----*/
+	position: fixed;
+	top: 0;
+	width: 100%;
+	/*----end of Sticks to top-----*/
+}
+header ul li{
+	display: inline;
+}
+.site-name{
+	float: left;
+	margin-left: 3em;
+}
+.home{
+	float: right;
+	margin-right: 3em;
+}
+header a{
+	text-decoration: none;
+	color: #ecf0f1;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+header a:hover{
+	color: #95a5a6;
+}
+/*#container{
+	width: 100%;
+	margin: 0 auto;
+}*/
+#learn-jquery{
+	background-color: #2980b9;
+	height: 30%;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2.5em;
+}
+#learn-jquery-ex{
+	background-color: #2980b9;
+	height: 15%;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3.2em;
+}
+#learn-jquery-ex h1{
+	text-align: center;
+	padding: 1.0em;
+	font-size: 2.5em;
+	font-weight: bold;
+	color: #ffffff;
+}
+#learn-jquery h1{
+	text-align: center;
+	padding: 1.5em;
+	font-size: 2.5em;
+	font-weight: bold;
+	color: #ffffff;
+}
+#exercises{
+	background-color: #ecf0f1;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 3em 0 3em 0;
+	text-align: center;
+	display: block;
+}
+#exercises h2{
+	text-align: center;
+	padding: 0em 1.2em 0.5em 1.2em;
+	font-size: 2em;
+	font-weight: bold;
+	color: #2980b9;
+}
+#exercises ul li{
+	background-color: #ffffff;
+	height: 5em;
+	width: 25em;
+	margin: 0.2em;
+	font-size: 0.8em;
+	text-align: center;
+	line-height: 5em;
+	display: inline-table;
+}
+#exercises a{
+	text-decoration: none;
+	color: #2980b9;
+	font-weight: bold;
+	font-size: 1.7em;
+}
+#exercises a:hover{
+	color: #95a5a6;
+}
+dt{ 
+	display: inline-block;
+	width: 95%;
+	padding: 0.4em 0 0.4em 0;
+	text-align: left;
+	background-color: #cccccc;
+	cursor: pointer;
+	font-size: 1.3em;
+}
+dd{ 
+	display: inline-block;
+	width: 95%;
+	padding: 0.4em 0 0.4em 0;
+	text-align: left;
+	background-color: #ffffff;
+	overflow: none;
+	font-size: 1.3em;
+}
+footer{
+	background-color: #22313F;
+	height: 5%;
+	width: 60%;
+	padding: 2em 0 2em 0;
+	margin-left: auto;
+	margin-right: auto;
+	color: #ecf0f1;
+	font-size: 1.1em;
+	text-align: center;
+}

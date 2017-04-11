@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="eng">
+	<head>
+		<title>W3 Resourse JQ Exercises</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<media name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style>
+			*, dt p, dd p{
+				margin: 5px;
+			}
+			div{  
+				height: 50px;  
+				margin: 5px;  
+				padding: 5px;  
+				float: left;  
+			}  
+			#box1{  
+				width: 50px;  
+				color: yellow;  
+				background-color: red;  
+			}  
+			#box2{   
+				width: 70px;  
+				color: rgb(255, 255, 255);  
+				background-color: rgb(15, 99, 30);  
+			}  
+			#box3{  
+				width: 90px;  
+				color: #fcc;  
+				background-color: #123456;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li class="site-name"><a href="index.html">W3 Resources jQuery Exercises</a></li>
+					<li class="home"><a href="index.html">Home</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section id="learn-jquery-ex">
+			<h1>Learn<br/> By Doing</h1>
+		</section>
+		<!--<div id="container">-->
+			<section id="exercises">
+				<h2>Fundamental Exercises Part II</h2>
+				<dl>
+					<dt><p>1. Attaches a change event to the select element (Use to create a drop-down list.) that gets the text for each selected option and writes them in a paragraph.</p></dt>
+					<dd>
+						<select size="4" style="width: 90px;">
+							<option>Red</option>
+							<option>Blue</option>
+							<option>Green</option>
+							<option>Black</option>
+							<option>White</option>
+						</select><br/><br/>
+						<p id="ds"></p>
+						<script type="text/javascript">
+							$(document).ready(function(){
+								//q1
+								$('select').change(function(){
+									var x = $('select').attr('selected', 'selected').val();
+									$('#ds').text('Color selected: ' + x);
+								});
+								//q2
+								$('#box1, #box2, #box3').click(function(){
+									var wd = $(this).css('width'); 
+									var ht = $(this).css('height'); 
+									var tc = $(this).css('color'); 
+									var bg = $(this).css('background-color'); 
+									$('#result').html(
+										'Width: ' + wd + '<br/>' +
+										'Height: ' + ht + '<br/>' +
+										'Text Color: ' + tc + '<br/>' +
+										'background Color: ' + bg 
+									).css('color' , 'blue');//end .html()
+								});
+								//q3
+								var txtSplt = $('#cth').text().split(' ');
+								var txtJoin = txtSplt.join('</span> <span>');
+								
+								//alert(txtSplt);
+								//alert(txtJoin);
+								$('#cth').html('<span>' + txtJoin + '</span>');
+								
+								$('span').click(function(){
+									$(this).css('color' , 'blue');
+								});
+								//q4
+								$('#cta').click(function(){
+									$('#fd').slideUp(2000).delay(800).fadeIn(400);
+									$('#sd').slideUp(300).fadeIn(400);
+								});
+								//q5
+								$('#aap').click(function(){
+									$(this).append('<p>New paragraph added</p>');
+								});
+								//q6
+								$('#rp').click(function(){
+									$('p').detach();
+								});
+								//q7
+								$('#actp').click(function(){
+									$('#some-P p').eq(2).css('color', 'maroon');
+								});
+								//q8
+								$('#ser').click(function(){
+									$('tr:even').css('background-color', 'orange');
+								});
+							
+							});//end of doc.ready()
+						</script>
+					</dd>
+					<dt><p>2. Get the styles (width, height, text color, and background color) of a clicked division.</p></dt>
+					<dd>
+						<p id="result">&nbsp;</p><br/>
+						<div id="box1">A</div>
+						<div id="box2">B</div>
+						<div id="box3">C</div>
+					</dd>
+					<dt><p>3. Click a word in the paragraph and highlight it.</p></dt>
+					<dd><p id="cth">Lorem ipsum dolor sit amet, quidam omnium vituperata his ei. Mea ut solet facete platonem, dicit eleifend consulatu qui ad, eros debet tamquam eu vim. Cu cum ferri decore graeci, munere signiferumque ea sed. Nisl lorem his no.</p></dd>
+					<dt><p>4. Animate the hiding and showing of two divs, delaying the first before showing it.</p></dt>
+					<dd>
+						<div id="fd" style="width:50px;height:50px;background-color:red;display:block;"></div>
+						<div id="sd" style="width:50px;height:50px;background-color:green;display:block;"></div><br style="clear:both;"/>
+						<button id="cta">Click to Animate</button>
+					</dd>
+					<dt><p>5. Click on a paragraph and add another paragraph.</p></dt>
+					<dd><p id="aap">Click me to add another paragraph.</p></dd>
+					<dt><p>6. Remove all paragraphs from the DOM.</p></dt>
+					<dd><button id="rp">Remove All Paragraphs</button></dd>
+					<dt><p>7. Set the background color of the 2nd  paragraph red by adding an appropriate class.</p></dt>
+					<dd id="some-P">
+						<p>A Paragraph</p>
+						<p>Another Paragraph</p>
+						<p>Some other Paragraph</p>
+						<p>Wow! Another Paragraph</p>
+						<p>Some other Paragraph </p>
+						<button id="actp">Add Class</button> 
+					</dd>
+					<dt><p>8. Find even table rows, matching the first, third  and so on.</p></dt>
+					<dd>
+						<table border="2">  
+							<tr><td>R1C1 Index-0</td><td>R1C2 Index-0</td></tr>  
+							<tr><td>R2C1 Index-0</td><td>R2C2 Index-1</td></tr>  
+							<tr><td>R3C1 Index-0</td><td>R3C2 Index-2</td></tr>  
+							<tr><td>R4C1 Index-0</td><td>R4C2 Index-3</td></tr>  
+							<tr><td>R5C1 Index-0</td><td>R5C2 Index-4</td></tr>  
+						</table>  
+						<button id="ser">Select Even Rows</button>  
+					</dd>
+				</dl>
+			</section>
+			<footer>
+				<p>Copyright &copy; 2017 | Designed and Coded by Jean Morris | Exercises by w3resource.com</p>
+			</footer>
+		<!--</div>-->
+	</body>
+</html>

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="eng">
+	<head>
+		<title>W3 Resourse JS Exercises</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<media name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		<section id="header">
+			<h1><a href="index.html">W3 Resourse's JS Exercises</a></h1>
+			<h1 id="back-home"><a href="index.html">Home</a></h1>
+		</section>
+		<div id="container">			
+			<section id="ex-name-section">
+				<h1>Learn by Doing</h1>
+			</section>
+			<section id="exercises-area">
+				<h1>String Exercises</h1>
+				<ul>
+					<li class="ex-q">1. Write a JavaScript function to check whether an `input` is a string or not.</li>
+					<li class="ex-a">
+						<span id="result"></span><br/><br/>
+						<form>
+							<input type="button" value="Run Function" onclick="isString()"/>
+						</form>
+						<script type="text/javascript">
+							function isString(){
+								var userInput = [1, 2, 4, 0];
+
+								if(Object.prototype.toString.call(userInput) === '[object String]'){
+									document.getElementById('result').innerHTML = userInput + ' is a string';
+								}else{
+									document.getElementById('result').innerHTML = userInput + ' is NOT a string';
+								}/*else{
+									document.getElementById('result').innerHTML = userInput + ' is unknown';
+								}
+								//el.preventDefault;*/
+							}
+						</script>
+					</li>
+					<li class="ex-q">2. Write a JavaScript function to check whether a string is blank or not.</li>
+					<li class="ex-a">
+						<span id="is-string-blank-result"></span><br/><br/>
+						<form>
+							<input type="button" value="Run Function" onclick="isStringBlank()"/>
+						</form>
+						<script type="text/javascript">
+							function isStringBlank(strng){
+								strng = '';
+								
+								if(strng == '' /*str.length = 0*/){
+									document.getElementById('is-string-blank-result').innerHTML = "The string is blank";
+								}else{
+									document.getElementById('is-string-blank-result').innerHTML = "The string is NOT blank";
+								}
+							}
+							
+							//isStringBlank('');
+						</script>
+					</li>
+					<li class="ex-q">3. Write a JavaScript function to split a string and convert it into an array of words.</li>
+					<li class="ex-a">
+						<span id="convert-string-to-array"></span><br/><br/>
+						<form>
+							<input type="button" value="Run Function" onclick="convertStringToArray()"/>
+						</form>
+						<script type="text/javascript">
+							function convertStringToArray(str){
+								str = "Come over";
+								
+								var strSplt = str.split(" ");
+								document.getElementById('convert-string-to-array').innerHTML = strSplt;
+							}
+						</script>
+					</li>
+					<li class="ex-q">4. Write a JavaScript function to remove specified number of characters from a string.</li>
+					<li class="ex-a">
+						<span id="remove-char-from-string"></span><br/><br/>
+						<form>
+							<input type="button" value="Run Function" onclick="shortenStringChar()"/>
+						</form>
+						<script type="text/javascript">
+							function shortenStringChar(string, specNum){
+								string = "Robin";
+								specNum = 4;
+									
+								var removeChar = string.substr(0, specNum);
+								
+								document.getElementById('remove-char-from-string').innerHTML= removeChar;
+							}
+						</script>
+					</li>
+					<li class="ex-q">5. Write a JavaScript function to convert a string in abbreviated form.<br/><br/>Example: Robin S.</li>
+					<li class="ex-a">
+						<span id="abbr-char-from-string"></span><br/><br/>
+						<form>
+							<input type="button" value="Run Function" onclick="abbrString()"/>
+						</form>
+						<script type="text/javascript">
+							function abbrString(string){
+								string = "Jean Morris"
+								var spltStr = string.split(' ');
+								
+								document.getElementById('abbr-char-from-string').innerHTML = spltStr[0] + ' ' + spltStr[1].charAt(0) + '.';
+							}
+						</script>
+					</li>
+					<li class="ex-q">6. Write a JavaScript function to capitalize the first letter of a string.</li>
+					<li class="ex-a">
+						<span id="cap-first-char-from-string"></span><br/><br/>
+						<form>
+							<input type="button" value="Run Function" onclick="capFirstLetter()"/>
+						</form>
+						<script type="text/javascript">
+							function capFirstLetter(){
+								var firstWord = "javascript string exercises";
+								
+								firstWord = firstWord.trim();
+								
+								document.getElementById('cap-first-char-from-string').innerHTML = firstWord.charAt(0).toUpperCase() + firstWord.substr(1);
+							}
+						</script>
+					</li>
+					<li class="ex-q">7. Write a JavaScript function to capitalize the first letter of each word in a string.</li>
+					<li class="ex-a">
+						<span id="cap-each-string"></span><br/><br/>
+						<form>
+							<input type="button" value="Run Function" onclick="capFirstWord()"/>
+						</form>
+						<script type="text/javascript">
+							function capFirstWord(){
+								var wordString = "the brown fox jumped over...";
+								var wordSplt = wordString.split(' ');
+								var a = "";
+								
+								for(i=0; i<wordSplt.length; i++){
+									a += wordSplt[i].charAt(0).toUpperCase() + wordSplt[i].substr(1) + " ";
+									
+									document.getElementById('cap-each-string').innerHTML = a;
+								} 
+								
+							}
+						</script>
+					</li>
+					<li class="ex-q">8. Write a JavaScript function that takes a string which has lower and upper case letters as a parameter and converts upper case letters to lower case, and lower case letters to upper case.</li>	
+					<li class="ex-a">
+						<span id="display-swap-cases"></span>
+						<!--<form>
+							<input type="button" value="Run Function" onclick="swapLetterCase()"/>
+						</form>-->
+						<script type="text/javascript">
+							function swapLetterCase(userLetters){
+								var resultSwap = "";//holds str
+								for(var i=0; i<userLetters.length; i++){
+									if(userLetters[i] === userLetters[i].toLowerCase()){
+										resultSwap += userLetters[i].toUpperCase();
+									}else if(userLetters[i] === userLetters[i].toUpperCase()){
+										resultSwap += userLetters[i].toLowerCase();
+									}else{
+										resultSwap += userLetters[i];
+									}	
+								}
+								return resultSwap;
+							}
+							document.getElementById('display-swap-cases').innerHTML = swapLetterCase('bEnZeR');
+						</script>
+					</li>
+					<li class="ex-q"> 9. Write a JavaScript function to strip leading and trailing spaces from a string.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function removeSpaces(){
+								var userStr = "		The time has come		";
+								var strTrim = userStr.trim();
+								
+								document.write(strTrim);
+							}
+							removeSpaces();
+						</script>
+					</li>
+					<li class="ex-q">10. Write a JavaScript function to truncate a string to a certain number of words.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function truncate (n){
+								var uSentence = "The quick brown fox jumps over the lazy dog";
+								var uSentenceSplt = uSentence.split(" ");
+								uSentenceSplt.length = n;
+								
+								return uSentenceSplt.join(" ");
+							}
+							document.write(truncate(5));
+						</script>
+					</li>
+					<li class="ex-q">11. Write a JavaScript function to alphabetize a given string.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function alphabetizeString(){
+								var givenString = "Some string to alphabetize";
+								
+								return givenString.split('').sort().join(' ').trim();
+							}
+							document.write(alphabetizeString());
+						</script>
+					</li>
+					<li class="ex-q">12. Write a JavaScript function to find a word within a string.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							/*function findString(wordToFind){
+								var searchAbleString = "The brown fox jumped over the lazy dog";
+								var wordCount = 0, y = 0;
+								
+								//spltStr
+								var spltString = searchAbleString.split(' ');
+								
+								for(var i=0; i<spltString.length; i++){
+									if(spltString[i] == wordToFind[0]){
+										return wordToFind + ' was found' + '<br/>';
+									}else{
+										return wordToFind + ' was not found' + '<br/>';
+									}
+								}
+								
+								//console.log(spltString('Bezn'));
+								//return ' was not found' + '<br/>';
+							}
+							document.write(findString('brown'));*/
+							function search_word(str,word){
+								var reg = new RegExp(word,'g');
+								var reg = str.match(reg);
+								return word + ' was found ' +reg.length+ ' time(s)';
+							}
+							document.write(search_word('The quick brown fox', 'b')); 
+						</script>
+					</li>
+				</ul>
+			</section>
+			<footer>
+				<p>Copyright &copy; 2016 | Designed and Coded by Jean Morris | Exercises by w3resource.com</p>
+			</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,935 @@
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+
+*{
+	margin: 0;
+	padding: 0;
+}
+html, body{
+	height: 100%;
+	width: 100%;
+	/*overflow-x: hidden;*/
+}
+nav{
+	background-color: white;/*##34495e;*/
+	text-align: center;
+	/*----sticks to top-----*/
+	position: fixed;
+	top: 0;
+	width: 100%;
+	/*----end of Sticks to top-----*/
+	z-index: 1;
+}
+#nav-container{
+	width: 50%;
+	margin: 0 auto;
+}
+nav img{
+	width: 3em;
+	float: left;
+	padding: 0.1em 0 0.1em 0;
+}
+nav ul{
+	float: right;
+}
+nav ul li{
+	display: inline-block;
+	list-style: none;
+	text-decoration: none;
+	padding: 0.9em 0.5em 0.1em 0.5em;
+}
+nav a{
+	text-decoration: none;
+	color: #004d99;
+	word-spacing: -0.2rem;
+	font-weight: 500;
+}
+nav a:hover{	
+	border-bottom: 0.189rem solid #e67e22;
+}
+.mobileMenu{
+	text-align: left;
+	cursor: pointer;
+	display: none;
+}
+section{
+	padding: 5.25rem;
+	text-align: center;
+}
+h1{
+	font-family: 'Abril Fatface', cursive;
+  	letter-spacing: 0.2rem;
+  	font-size: 1.5em;
+	margin-bottom: 0.5em;
+	text-decoration: underline;
+}
+h2{
+	font-family: 'Abril Fatface', cursive;
+  	letter-spacing: 0.2rem;
+  	font-size: 1.2em;
+	margin-bottom: 0.5em;
+	
+}
+p{
+	padding: 1em 20em;
+	text-align: left;
+}
+nav a, p, figure, b{
+	font-family: 'Source Code Pro', sans-serif;
+ 	
+}
+#nameSection{
+	padding-top: 8em;
+	background-color: #ecf0f1;
+	color:#2c3e50;
+}
+#nameSection img{
+	width: 8em;
+	border-radius: 1em;
+}
+#nameSection h1{
+	text-decoration: underline;
+	margin-bottom: 0;
+}
+#nameSection p{
+	text-align: center;
+}
+#nameSection p:before{
+	content:"\00ab"; 
+}
+#nameSection p:after{
+	content:"\00bb"; 
+}
+#aboutMeSection{
+	background-color: #e67e22;
+	color: #ecf0f1;
+}
+#technicalSkillsSection{
+	background-color: #ecf0f1;
+	color: #2c3e50;;
+}
+#pastProjectsSection{
+	background-color: #ecf0f1;
+	color: #2c3e50;
+	padding-bottom: 7em;
+	height: 85%;
+}
+#pastProjectsSection a{
+	text-decoration: none;
+}
+#pastProjectsSection figure{
+	display: block;
+	width: 70%;
+	height: 85%;
+	margin: 0 auto;
+}
+figure{
+	display: block;
+	width: 70%;
+	height: 85%;
+	margin: 0 auto;
+}
+#pastProjectsSection figure img{
+	width: 30%;
+	height: 40%;
+	border-radius: 1em;
+	opacity: 0.6;
+}
+#pastProjectsSection figure img:hover{
+	opacity: 1;
+}
+#experienceSection{
+	background-color: #2980b9;
+	color: #ecf0f1;
+}
+#contactMeSection{
+	background-color: #34495e;
+	color: #ecf0f1;
+}
+#aside-container{
+	margin: 0 auto;
+	width: 65%;
+	padding: 0 5em 0 5em;
+}
+aside{
+	float: left;
+	width: 30%;
+	margin: 5px;
+}
+.clear{
+	display: block;
+	clear: both;
+}
+/*technolgies skills spans*/
+.technolgies{
+	line-height: 100px;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	margin: 0.5em;
+	border: 0.2em solid #e67e22;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+.title{
+	font-weight: 900;
+}
+/*-------------------------------Responsive Media--------------------*/
+/*If [device width] is greater than or equal to 1507*/
+@media screen and (max-width: 1365px){
+#nav-container{
+	width: 60%;
+	margin: 0 auto;
+}
+nav img{
+	width: 3em;
+	float: left;
+	padding: 0.1em 0 0.1em 0;
+}
+nav ul{
+	float: right;
+}
+nav ul li{
+	display: inline-block;
+	list-style: none;
+	text-decoration: none;
+	padding: 0.9em 0.5em 0.1em 0.5em;
+}
+nav a{
+	text-decoration: none;
+	color: #004d99;
+	word-spacing: -0.2rem;
+	font-weight: 500;
+}
+nav a:hover{	
+	border-bottom: 0.189rem solid #e67e22;
+}
+.mobileMenu{
+	text-align: left;
+	cursor: pointer;
+	display: none;
+}
+section{
+	padding: 5.25rem;
+	text-align: center;
+}
+h1{
+	font-family: 'Abril Fatface', cursive;
+  	letter-spacing: 0.2rem;
+  	font-size: 1.5em;
+	margin-bottom: 0.5em;
+	text-decoration: underline;
+}
+p{
+	padding: 1em 10em;
+	text-align: left;
+}
+nav a, p, figure, b{
+	font-family: 'Source Code Pro', sans-serif;
+ 	
+}
+#nameSection{
+	padding-top: 8em;
+	background-color: #ecf0f1;
+	color:#2c3e50;
+}
+#nameSection img{
+	width: 8em;
+	border-radius: 1em;
+}
+#nameSection h1{
+	text-decoration: underline;
+	margin-bottom: 0;
+}
+#nameSection p{
+	text-align: center;
+}
+#nameSection p:before{
+	content:"\00ab"; 
+}
+#nameSection p:after{
+	content:"\00bb"; 
+}
+#aboutMeSection{
+	background-color: #e67e22;
+	color: #ecf0f1;
+}
+#technicalSkillsSection{
+	background-color: #ecf0f1;
+	color: #2c3e50;;
+}
+#pastProjectsSection{
+	background-color: #ecf0f1;
+	color: #2c3e50;
+	padding-bottom: 7em;
+	height: 85%;
+}
+#pastProjectsSection a{
+	text-decoration: none;
+}
+#pastProjectsSection figure{
+	display: block;
+	width: 70%;
+	height: 85%;
+	margin: 0 auto;
+}
+figure{
+	display: block;
+	width: 70%;
+	height: 85%;
+	margin: 0 auto;
+}
+#pastProjectsSection figure img{
+	width: 30%;
+	height: 40%;
+	border-radius: 1em;
+	opacity: 0.6;
+}
+#pastProjectsSection figure img:hover{
+	opacity: 1;
+}
+#experienceSection{
+	background-color: #2980b9;
+	color: #ecf0f1;
+}
+#contactMeSection{
+	background-color: #34495e;
+	color: #ecf0f1;
+}
+#aside-container{
+	margin: 0 auto;
+	width: 65%;
+	padding: 0 5em 0 5em;
+}
+aside{
+	float: left;
+	width: 30%;
+	margin: 5px;
+}
+.clear{
+	display: block;
+	clear: both;
+}
+/*technolgies skills spans*/
+.technolgies{
+	line-height: 100px;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	margin: 0.5em;
+	border: 0.2em solid #e67e22;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+.title{
+	font-weight: 900;
+}
+}/*---------------------------End of 1507px media------------------------*/
+/*If [device width] is greater than or equal to 1507*/
+@media screen and (max-width: 1135px){
+#nav-container{
+	width: 75%;
+	margin: 0 auto;
+}
+nav img{
+	width: 3em;
+	float: left;
+	padding: 0.1em 0 0.1em 0;
+}
+nav ul{
+	float: right;
+}
+nav ul li{
+	display: inline-block;
+	list-style: none;
+	text-decoration: none;
+	padding: 0.9em 0.5em 0.1em 0.5em;
+}
+nav a{
+	text-decoration: none;
+	color: #004d99;
+	word-spacing: -0.2rem;
+	font-weight: 500;
+}
+nav a:hover{	
+	border-bottom: 0.189rem solid #e67e22;
+}
+.mobileMenu{
+	text-align: left;
+	cursor: pointer;
+	display: none;
+}
+section{
+	padding: 5.25rem;
+	text-align: center;
+}
+h1{
+	font-family: 'Abril Fatface', cursive;
+  	letter-spacing: 0.2rem;
+  	font-size: 1.5em;
+	margin-bottom: 0.5em;
+	text-decoration: underline;
+}
+p{
+	padding: 1em 5em;
+	text-align: left;
+}
+nav a, p, figure, b{
+	font-family: 'Source Code Pro', sans-serif;
+}
+#nameSection{
+	padding-top: 8em;
+	background-color: #ecf0f1;
+	color:#2c3e50;
+}
+#nameSection img{
+	width: 8em;
+	border-radius: 1em;
+}
+#nameSection h1{
+	text-decoration: underline;
+	margin-bottom: 0;
+}
+#nameSection p{
+	text-align: center;
+}
+#nameSection p:before{
+	content:"\00ab"; 
+}
+#nameSection p:after{
+	content:"\00bb"; 
+}
+#aboutMeSection{
+	background-color: #e67e22;
+	color: #ecf0f1;
+}
+#technicalSkillsSection{
+	background-color: #ecf0f1;
+	color: #2c3e50;;
+}
+#pastProjectsSection{
+	background-color: #ecf0f1;
+	color: #2c3e50;
+	padding-bottom: 7em;
+	height: 85%;
+}
+#pastProjectsSection a{
+	text-decoration: none;
+}
+#pastProjectsSection figure{
+	display: block;
+	width: 70%;
+	height: 85%;
+	margin: 0 auto;
+}
+figure{
+	display: block;
+	width: 70%;
+	height: 85%;
+	margin: 0 auto;
+}
+#pastProjectsSection figure img{
+	width: 30%;
+	height: 40%;
+	border-radius: 1em;
+	opacity: 0.6;
+}
+#pastProjectsSection figure img:hover{
+	opacity: 1;
+}
+#experienceSection{
+	background-color: #2980b9;
+	color: #ecf0f1;
+}
+#contactMeSection{
+	background-color: #34495e;
+	color: #ecf0f1;
+}
+#aside-container{
+	margin: 0 auto;
+	width: 65%;
+	padding: 0 5em 0 5em;
+}
+aside{
+	float: left;
+	width: 30%;
+	margin: 5px;
+}
+.clear{
+	display: block;
+	clear: both;
+}
+/*technolgies skills spans*/
+.technolgies{
+	line-height: 100px;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	margin: 0.5em;
+	border: 0.2em solid #e67e22;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+.title{
+	font-weight: 900;
+}
+}/*---------------------------End of 1507px media------------------------*/
+/*If [device width] is greater than or equal to 1507*/
+@media screen and (max-width: 905px){
+#nav-container{
+	width: 85%;
+	margin: 0 auto;
+}
+nav img{
+	width: 3em;
+	float: left;
+	padding: 0.1em 0 0.1em 0;
+}
+nav ul{
+	float: right;
+}
+nav ul li{
+	display: inline-block;
+	list-style: none;
+	text-decoration: none;
+	padding: 0.9em 0.5em 0.1em 0.5em;
+}
+nav a{
+	text-decoration: none;
+	color: #004d99;
+	word-spacing: -0.2rem;
+	font-weight: 500;
+}
+nav a:hover{	
+	border-bottom: 0.189rem solid #e67e22;
+}
+.mobileMenu{
+	text-align: left;
+	cursor: pointer;
+	display: none;
+}
+section{
+	padding: 5.25rem;
+	text-align: center;
+}
+h1{
+	font-family: 'Abril Fatface', cursive;
+  	letter-spacing: 0.2rem;
+  	font-size: 1.5em;
+	margin-bottom: 0.5em;
+	text-decoration: underline;
+}
+p{
+	padding: 1em 5em;
+	text-align: left;
+}
+nav a, p, figure, b{
+	font-family: 'Source Code Pro', sans-serif;
+ 	
+}
+#nameSection{
+	padding-top: 8em;
+	background-color: #ecf0f1;
+	color:#2c3e50;
+}
+#nameSection img{
+	width: 8em;
+	border-radius: 1em;
+}
+#nameSection h1{
+	text-decoration: underline;
+	margin-bottom: 0;
+}
+#nameSection p{
+	text-align: center;
+}
+#nameSection p:before{
+	content:"\00ab"; 
+}
+#nameSection p:after{
+	content:"\00bb"; 
+}
+#aboutMeSection{
+	background-color: #e67e22;
+	color: #ecf0f1;
+}
+#technicalSkillsSection{
+	background-color: #ecf0f1;
+	color: #2c3e50;;
+}
+#pastProjectsSection{
+	background-color: #ecf0f1;
+	color: #2c3e50;
+	padding-bottom: 7em;
+	height: 85%;
+}
+#pastProjectsSection a{
+	text-decoration: none;
+}
+#pastProjectsSection figure{
+	display: block;
+	width: 70%;
+	height: 85%;
+	margin: 0 auto;
+}
+figure{
+	display: block;
+	width: 70%;
+	height: 85%;
+	margin: 0 auto;
+}
+#pastProjectsSection figure img{
+	width: 30%;
+	height: 40%;
+	border-radius: 1em;
+	opacity: 0.6;
+}
+#pastProjectsSection figure img:hover{
+	opacity: 1;
+}
+#experienceSection{
+	background-color: #2980b9;
+	color: #ecf0f1;
+}
+#contactMeSection{
+	background-color: #34495e;
+	color: #ecf0f1;
+}
+#aside-container{
+	margin: 0 auto;
+	width: 65%;
+	padding: 0 5em 0 5em;
+}
+aside{
+	float: left;
+	width: 30%;
+	margin: 5px;
+}
+.clear{
+	display: block;
+	clear: both;
+}
+/*technolgies skills spans*/
+.technolgies{
+	line-height: 100px;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	margin: 0.5em;
+	border: 0.2em solid #e67e22;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+.title{
+	font-weight: 900;
+}
+}/*---------------------------End of 1507px media------------------------*/
+/*If [device width] is greater than or equal to 1507*/
+@media screen and (max-width: 884px){
+#nav-container{
+	width: 90%;
+	margin: 0 auto;
+}
+nav img{
+	width: 3em;
+	float: left;
+	padding: 0.1em 0 0.1em 0;
+}
+nav ul{
+	float: right;
+}
+nav ul li{
+	display: inline-block;
+	list-style: none;
+	text-decoration: none;
+	padding: 0.9em 0.5em 0.1em 0.5em;
+}
+nav a{
+	text-decoration: none;
+	color: #004d99;
+	word-spacing: -0.1rem;
+	font-size: 0.9em;
+	font-weight: 500;
+}
+nav a:hover{	
+	border-bottom: 0.189rem solid #e67e22;
+}
+.mobileMenu{
+	text-align: left;
+	cursor: pointer;
+	display: none;
+}
+section{
+	padding: 5.25rem;
+	text-align: center;
+}
+h1{
+	font-family: 'Abril Fatface', cursive;
+  	letter-spacing: 0.2rem;
+  	font-size: 1.5em;
+	margin-bottom: 0.5em;
+	text-decoration: underline;
+}
+p{
+	padding: 1em 5em;
+	text-align: left;
+}
+nav a, p, figure, b{
+	font-family: 'Source Code Pro', sans-serif;
+}
+#nameSection{
+	padding-top: 8em;
+	background-color: #ecf0f1;
+	color:#2c3e50;
+}
+#nameSection img{
+	width: 8em;
+	border-radius: 1em;
+}
+#nameSection h1{
+	text-decoration: underline;
+	margin-bottom: 0;
+}
+#nameSection p{
+	text-align: center;
+}
+#nameSection p:before{
+	content:"\00ab"; 
+}
+#nameSection p:after{
+	content:"\00bb"; 
+}
+#aboutMeSection{
+	background-color: #e67e22;
+	color: #ecf0f1;
+}
+#technicalSkillsSection{
+	background-color: #ecf0f1;
+	color: #2c3e50;;
+}
+#pastProjectsSection{
+	background-color: #ecf0f1;
+	color: #2c3e50;
+	padding-bottom: 7em;
+	height: 85%;
+}
+#pastProjectsSection a{
+	text-decoration: none;
+}
+#pastProjectsSection figure{
+	display: block;
+	width: 70%;
+	height: 85%;
+	margin: 0 auto;
+}
+figure{
+	display: block;
+	width: 70%;
+	height: 85%;
+	margin: 0 auto;
+}
+#pastProjectsSection figure img{
+	width: 30%;
+	height: 40%;
+	border-radius: 1em;
+	opacity: 0.6;
+}
+#pastProjectsSection figure img:hover{
+	opacity: 1;
+}
+#experienceSection{
+	background-color: #2980b9;
+	color: #ecf0f1;
+}
+#contactMeSection{
+	background-color: #34495e;
+	color: #ecf0f1;
+}
+#aside-container{
+	margin: 0 auto;
+	width: 75%;
+	padding: 0 3em 0 3em;
+}
+aside{
+	float: left;
+	width: 30%;
+	margin: 5px;
+}
+.clear{
+	display: block;
+	clear: both;
+}
+/*technolgies skills spans*/
+.technolgies{
+	line-height: 100px;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	margin: 0.5em;
+	border: 0.2em solid #e67e22;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+.title{
+	font-weight: 900;
+}
+}/*---------------------------End of 1507px media------------------------*/
+/*If [device width] is greater than or equal to 1507*/
+@media screen and (max-width: 701px){
+#nav-container{
+	width: 95%;
+	margin: 0 auto;
+}
+nav img{
+	width: 3em;
+	float: left;
+	padding: 0.1em 0 0.1em 0;
+}
+nav ul{
+	float: right;
+}
+nav ul li{
+	display: inline-block;
+	list-style: none;
+	text-decoration: none;
+	padding: 0.9em 0.2em 0.1em 0.2em;
+}
+nav a{
+	text-decoration: none;
+	color: #004d99;
+	word-spacing: -0.3rem;
+	font-size: 0.9em;
+	font-weight: 500;
+}
+nav a:hover{	
+	border-bottom: 0.189rem solid #e67e22;
+}
+.mobileMenu{
+	text-align: left;
+	cursor: pointer;
+	display: none;
+}
+section{
+	padding: 5.25rem;
+	text-align: center;
+}
+h1{
+	font-family: 'Abril Fatface', cursive;
+  	letter-spacing: 0.2rem;
+  	font-size: 1.5em;
+	margin-bottom: 0.5em;
+	text-decoration: underline;
+}
+p{
+	padding: 1em 2em;
+	text-align: left;
+}
+nav a, p, figure, b{
+	font-family: 'Source Code Pro', sans-serif;
+}
+#nameSection{
+	padding-top: 8em;
+	background-color: #ecf0f1;
+	color:#2c3e50;
+}
+#nameSection img{
+	width: 8em;
+	border-radius: 1em;
+}
+#nameSection h1{
+	text-decoration: underline;
+	margin-bottom: 0;
+}
+#nameSection p{
+	text-align: center;
+}
+#nameSection p:before{
+	content:"\00ab"; 
+}
+#nameSection p:after{
+	content:"\00bb"; 
+}
+#aboutMeSection{
+	background-color: #e67e22;
+	color: #ecf0f1;
+}
+#technicalSkillsSection{
+	background-color: #ecf0f1;
+	color: #2c3e50;;
+}
+#pastProjectsSection{
+	background-color: #ecf0f1;
+	color: #2c3e50;
+	padding-bottom: 7em;
+	height: 85%;
+}
+#pastProjectsSection a{
+	text-decoration: none;
+}
+#pastProjectsSection figure{
+	display: block;
+	width: 70%;
+	height: 85%;
+	margin: 0 auto;
+}
+figure{
+	display: block;
+	width: 70%;
+	height: 85%;
+	margin: 0 auto;
+}
+#pastProjectsSection figure img{
+	width: 30%;
+	height: 40%;
+	border-radius: 1em;
+	opacity: 0.6;
+}
+#pastProjectsSection figure img:hover{
+	opacity: 1;
+}
+#experienceSection{
+	background-color: #2980b9;
+	color: #ecf0f1;
+}
+#contactMeSection{
+	background-color: #34495e;
+	color: #ecf0f1;
+}
+#aside-container{
+	margin: 0 auto;
+	width: 65%;
+	padding: 0 5em 0 5em;
+}
+aside{
+	float: left;
+	width: 30%;
+	margin: 5px;
+}
+.clear{
+	display: block;
+	clear: both;
+}
+/*technolgies skills spans*/
+.technolgies{
+	line-height: 100px;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	margin: 0.5em;
+	border: 0.2em solid #e67e22;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+.title{
+	font-weight: 900;
+}
+}/*---------------------------End of 1507px media------------------------*/
+
+
+

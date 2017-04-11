@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="eng">
+	<head>
+		<title>W3 Resourse JQ Exercises</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<media name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style>
+			.cdcb{
+				background-color: yellow;
+			}
+			.focused-in{
+				background: green;
+			}
+			.focused-out {
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li class="site-name"><a href="index.html">W3 Resources jQuery Exercises</a></li>
+					<li class="home"><a href="index.html">Home</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section id="learn-jquery-ex">
+			<h1>Learn<br/> By Doing</h1>
+		</section>
+		<!--<div id="container">-->
+			<section id="exercises">
+				<h2></h2>
+				<dl>
+					<dt>1. Attach a click and double-click event to the p element.<br/><br/> Single click: 
+					<p>This is a single click Event</p><br/>
+					Double-click: 
+					<p>This is a double-click Event</p> </dt>
+					<dd>
+						<p id="cd">_</p><br/>
+						<p id="ce">Click Me For Event</p>
+						<script type="text/javascript">
+							$(document).ready(function(){
+								//q1
+								/*$('#ce').click(function(){
+									$('#cd').text('This is a single-click Event');
+								});
+								
+								$('#ce').dblclick(function(){
+									$('#cd').text('This is a double-click Event');
+								});*/
+								
+								$('#ce').on({
+									click: function(){
+										$('#cd').text('This is a single-click Event');
+									},
+									dblclick: function(){
+										$('#cd').text('This is a double-click Event');
+									}
+								});
+								//q2
+								$('#field1').blur(function(){
+									$('#bd').text('Field 1 loss focus').css('color', 'red');;
+								});
+								$('#field2').blur(function(){
+									$('#bd').text('Field 2 loss focus').css('color', 'red');
+								});
+								//q3
+								$('#fp > p').click(function(){
+									$(this).slideUp();
+								});
+								//q4
+								$('#dcb').dblclick(function(){
+									$(this).toggleClass('cdcb');
+								});
+								//q5
+								$('#aa').click(function(){
+									$(this).append('<h4>Click me to add another!</h4>');
+								});
+								//q6
+								$('#pWord').keydown(function(e){
+									e.preventDefault();
+									//return false;
+									//$(this).attr('readonly', true);
+									alert('You foulllll!');
+								});
+								//q7
+								$('#tn').children().click(function(){
+									var dc = $(this).prop('tagName').toLowerCase();//prop('tagName'));
+						 		$('#dc').text(dc + ' tag was selected');
+								});
+								//q8
+								$('#fn').keyup(function(e){
+									$('#dk').text('Keyboard code: ' + e.keyCode);
+								});
+								//q9
+								$('#fName, #lName').on({
+									focus: function(){
+										$(this).attr('class', 'focused-in');
+									},
+									blur: function(){
+										$(this).attr('class', 'focused-out');
+									}
+								});
+								//q10
+								$('#me').on({
+									mousedown: function(){
+										$(this).text('You press me DOWN :(');
+									},
+									mouseup: function(){
+										$(this).text('You press me UP :)');
+									}
+								});
+								
+							});
+						</script>
+					</dd>
+					<dt>2. Attach a function to the blur event. The blur event occurs when the an input field loses focus.</dt>
+					<dd>
+						 <form>
+						   <input id="field1" type="text" value="Field 1"/>
+						   <input id="field2" type="text" value="Field 2"/>
+						 </form><br/>
+						 <p id="bd"></p>
+					</dd>
+					<dt>3. Hide all headings on a page when they are clicked.</dt>
+					<dd id="fp">
+						<p>Heading One</p>
+						<p>Heading Two</p>
+						<p>Heading Three</p>
+					</dd>
+					<dt>4. Double click on paragraph to toggle background color.</dt>
+					<dd><p id="dcb">Double-click to Change bg-color.</p></dd>
+					<dt>5. Click a header to add another</dt>
+					<dd><h4 id="aa">Click me to add another!</h4></dd>
+					<dt>6. Stop people from writing in first text input box (user ID).</dt>
+					<dd>
+						<input type="text" id="userID" placeholder="User ID">
+						<input type="password" id="pWord" placeholder="Password">
+					</dd>
+					<dt>7. Display the tag's name on click.</dt>
+					<dd id="tn">
+						<h4>Heading4</h4>
+						<h5>Heading5</h5>  
+						<p>Paragraph</p>
+						<button>Button</button><br/><br/>
+						<p id="dc"></p>
+					</dd>
+					<dt>8. Display the keyboard key which was pressed in a textbox:.</dt>
+					<dd>
+						Full Name:<input type="text" id="fn"><br/><br/>
+						<p id="dk"></p>
+					</dd>
+					<dt>9. Set background color of an element when the element gets focus or loses focus.</dt>
+					<dd>
+						<p>First Name: <input type="text" id='fName'></p>
+						<p>Last Name: <input type="text" id='lName'></p>
+					</dd>
+					<dt>10. Show texts when mouseup and mousedown event triggering.</dt>
+					<dd><p id="me">Press Me!!</p></dd>
+					
+				</dl>
+			</section>
+			<footer>
+				<p>Copyright &copy; 2017 | Designed and Coded by Jean Morris | Exercises by w3resource.com</p>
+			</footer>
+		<!--</div>-->
+	</body>
+</html>

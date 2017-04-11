@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="eng">
+	<head>
+		<title>W3 Resourse JS Exercises</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<media name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		<section id="header">
+			<h1><a href="index.html">W3 Resourse's JS Exercises</a></h1>
+			<h1 id="back-home"><a href="index.html">Home</a></h1>
+		</section>
+		<div id="container">			
+			<section id="ex-name-section">
+				<h1>Learn by Doing</h1>
+			</section>
+			<section id="exercises-area">
+				<h1>DOM Exercises</h1>
+				<ul>
+					<li class="ex-q">1. Here is a sample html file with a submit button. Now modify the style of the paragraph text through javascript code.<br/><br/>Clicking on the button the font, font size, and color of the paragraph text will be changed.</li>
+					<li class="ex-a">
+						<p id="text">JavaScript Exercises - w3resource</p><br/>
+						<div>
+						<button id="jsStyle" onclick="jsStyle()">Change Style</button>
+						</div>
+						<script type="text/javascript">
+							//add styles js_style function
+							function jsStyle(){
+								//get text element
+								var text = document.getElementById('text');
+								text.style.fontFamily = "courier";
+								text.style.fontSize = "25px";
+								text.style.display = "hidden";
+							}
+						</script>
+					</li>
+					<li class="ex-q">2. Write a JavaScript function to get the values of First and Last name of the following form.</li>
+					<li class="ex-a">
+						<form id="user-info">  
+							First Name:<input type="text" id="fname"/><br/>
+							Last Name:<input type="text" id="lname"/><br/>
+							<input type="submit" value="Submit" id="a"/>  
+						</form><br/>
+						<span id="display-val"></span>
+						<script type="text/javascript">
+							//get form values function
+							function getUserInfo(e){
+								var fName = document.getElementById('fname').value;
+								var lName = document.getElementById('lname').value;
+								document.getElementById('display-val').innerHTML = fName +" "+ lName;
+								//document.write( + " " + );
+								e.preventDefault();
+							}
+							document.getElementById('a').addEventListener('click', getUserInfo);
+							
+							/*get form values function done with loop
+							function getFormValue(e){
+								var formName = user-info.getElementById('user-info');
+								alert("found him");
+							}*/
+						</script>
+					</li>
+					<li class="ex-q">3. Write a JavaScript program to set the background color of a paragraph.</li>
+					<li class="ex-a">
+						<p id="intro-para">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur.</p><br/>
+						<button id="change-bg">Change Style</button>
+						<script type="text/javascript">
+							document.getElementById('change-bg').addEventListener('click', function(){
+								var firstPara = document.getElementById('intro-para');
+								//set background color to orange
+								firstPara.style.backgroundColor = "#FFA500";
+							});
+						</script>
+					</li>
+					<li class="ex-q">4. Write a JavaScript function to get the value of the href, hreflang, rel, target, and type attributes of the specified link.</li>
+					<li class="ex-a">
+						<p><a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="http://www.w3resource.com/">w3resource</a></p><br/>  
+						<button id="get-atts">Get Link Attributes</button><br/>
+						<span id="display-attr"></span>
+						<script type="text/javascript">
+							document.getElementById('get-atts').addEventListener('click', function(){
+								var typeAttr = document.getElementById('w3r').getAttribute('type');
+								var hreflangAttr = document.getElementById('w3r').getAttribute('hreflang');
+								var relAttr = document.getElementById('w3r').getAttribute('rel');
+								var targetAttr = document.getElementById('w3r').getAttribute('target');
+								var hrefAttr = document.getElementById('w3r').getAttribute('href');
+								document.getElementById('display-attr').innerHTML = "type: " +typeAttr + ", hreflang: " + hreflangAttr + ", rel: " + relAttr + ", target: " + targetAttr + ", href: " + hrefAttr;
+							});
+						</script>
+					</li>
+					<li class="ex-q">5. Write a JavaScript function to add rows to a table.</li>
+					<li class="ex-a">
+						<table id="sample-table" border="2">  
+							<tr>
+								<td>Row1 cell1</td>  
+								<td>Row1 cell2</td>
+							</tr>  
+							<tr>
+								<td>Row2 cell1</td>  
+								<td>Row2 cell2</td>
+							</tr>  
+						</table><br>  
+						<input type="button" id="insertRow" value="Insert New Row">   
+						<script type="text/javascript">
+							function insertRow(){
+								//find table element
+								var table = document.getElementById('sample-table');
+								//create empty tr element and add to first pos in table with insertRow() method
+								var empRow = table.insertRow();
+								//insert new cells(td element) at first and second position of new created <tr> = empRow(); with insertCell();
+								var cell1 = empRow.insertCell(0);
+								var cell2 = empRow.insertCell(1);
+								//add text to new created cells
+								cell1.innerHTML = "New Cell";
+								cell2.innerHTML = "New Cell";
+							}
+							document.getElementById('insertRow').addEventListener('click', insertRow);
+						</script>
+					</li>
+					<li class="ex-q">6. Write a JavaScript function that accept row, column, (to identify a particular cell) and a string to update the content of that cell.</li>
+					<li class="ex-a">
+						<table id="my-table" border="1">  
+							<tr>
+								<td>Row1 cell1</td>  
+								<td>Row1 cell2</td>
+							</tr>  
+							<tr>
+								<td>Row2 cell1</td>  
+								<td>Row2 cell2</td>
+							</tr>  
+							<tr>
+								<td>Row3 cell1</td>  
+								<td>Row3 cell2</td>
+							</tr>  
+						</table><br/>
+						<form>  
+							<input type="button" id="changeContent" value="Change content"/>  
+						</form>
+						<script type="text/javascript">
+							/*function changeRowContent(){
+								//get rows1 contents
+								//alert(document.getElementById('my-table').rows[0].innerHTML);
+								//get rows1 cell1 contents								alert(document.getElementById('my-table').rows[0].cells.item(0).innerHTML);
+								//change content of row 1 cell1
+								var r1c = document.getElementById('my-table').rows[1].cells;
+								r1c[1].innerHTML = "New Content";
+							}*/
+							function changeRowContent(){
+								//prompt user for input
+								 var getRow = prompt("Enter the row number");
+								 var getColumn = prompt("Enter the column number");
+								 var newContent = prompt("Enter new content");
+								//select table and row
+								var getTable = document.getElementById('my-table').rows[getRow].cells;
+								//select column and add new content
+								getTable[getColumn].innerHTML = newContent;
+							}
+							document.getElementById('changeContent').addEventListener('click', changeRowContent);
+						</script>
+					</li>
+					<li class="ex-q">7. Write a JavaScript function that creates a table, accept row, column numbers from the user, and input row-column number as content (e.g. Row-0 Column-0) of a cell.</li>
+					<li class="ex-a">
+						<p>Click button below to create new table</p><br/>
+						<table id="table-holder" border="1">   
+						</table>
+						<br/>
+						<form>  
+							<input type="button" onclick="createTable()" value="Create New table"/>  
+						</form>
+						<script type="text/javascript">
+							function createTable(){
+								//prompt user for number of row(s)
+								var rowNum = prompt('Enter number of row(s)', 1);
+								//prompt user for number of column(s)
+								var colNum = prompt('Enter number of row(s)', 1);
+								
+								for(var r=0; r<rowNum; r++){
+									var selectTable = document.getElementById('table-holder').insertRow(r);
+									for(var c=0;c<colNum; c++){
+										var y =  selectTable.insertCell(c);  
+										y.innerHTML="Row"+r+" Column"+c;
+									}
+								}
+							}
+						</script>
+					</li>
+					<li class="ex-q">8. Write a JavaScript program to remove items from a dropdown list.</li>
+					<li class="ex-a">
+						<select id="color-select">  
+							<option>Red</option>  
+							<option>Green</option>  
+							<option>White</option>  
+							<option>Black</option>  
+						</select>  
+						<input type="button" onclick="removeSelectOption()" value="Select and Remove"/><br></form>
+						<script type="text/javascript">
+							function removeSelectOption(){
+								var getSelect = document.getElementById('color-select');
+								//get selected option
+								var getSelectedItem = getSelect.selectedIndex;	
+								//remove seleted option
+								getSelect.options[getSelectedItem].remove();
+								
+								//getSelect.remove(getSelect.selectedIndex);
+							}
+						</script>
+					</li>
+					<li class="ex-q">9. Write a JavaScript program to count and display the items of a dropdown list.</li>
+					<li class="ex-a">
+						<form>  
+							Color :  
+							<select id="mySelect">  
+								<option>Red</option>  
+								<option>Green</option>  
+								<option>Blue</option>  
+								<option>White</option>  
+							</select></br/> 
+							<span id="dis-res"></span><br/>
+							<input type="button" onclick="getOptions()" value="Count and Output options"/>  
+						</form>
+						<script type="text/javascript">
+							function getOptions(){
+								var getSelect = document.getElementById('mySelect');
+								var selectCounts = getSelect.options.length;
+								var selectOptionValues = getSelect.value;
+								var resDis = "";
+								
+								for(var i=0; i<mySelect.length; i++){
+									resDis = resDis + mySelect.options[i].text + "<br/>";
+									document.getElementById('dis-res').innerHTML = resDis + "<br/>" + selectCounts + " items found";
+								}
+							}
+						</script>
+					</li>
+					<li class="ex-q">10. Write a JavaScript program to display a random image from the selected list.</li>
+					<li class="ex-a">
+						<button onclick="randPic()">Randon Picture</button>
+						<script type="text/javascript">
+							//document.getElementById('img-div').style.visibility="hidden";
+							function randPic(){
+								
+							}
+						</script>
+					</li>
+					<li class="ex-q">13. Write a JavaScript program to get the width and height of the window (any time the window is resized).</li>
+					<li class="ex-a">
+						<span id="dis-reso"></span>
+						<script type="text/javascript">
+							function windowProps(){
+								var windowWidth = document.body.clientWidth;
+								var windowHeight = document.body.clientHeight;
+								var resoDis = "";
+								//document.write("Window size: " + windowWidth + " x " + windowHeight);
+								document.getElementById('dis-reso').innerHTML = "Window size: " +windowWidth + " x " + windowHeight;
+							}
+							windowProps()
+							window.addEventListener('resize', windowProps);
+						</script>
+					</li>
+				</ul>
+			</section>
+			<footer>
+				<p>Copyright &copy; 2016 | Designed and Coded by Jean Morris | Exercises by w3resource.com</p>
+			</footer>
+		</div>
+	</body>
+</html>

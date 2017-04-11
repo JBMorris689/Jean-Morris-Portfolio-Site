@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="eng">
+	<head>
+		<title>W3 Resourse JQ Exercises</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<media name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style>
+			.w3r_font_color{
+				color: red;
+			}
+			.w3r_background{
+				background: yellow;
+			}
+			
+			.w3r_bg_orange{
+				background: #eaecef;
+			}
+			.w3r_bg_red{
+				color: red;
+			}
+			.block{
+				position: absolute;
+				background-color: #B0E0E6;
+				width: 80px;
+				height: 80px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li class="site-name"><a href="index.html">W3 Resources jQuery Exercises</a></li>
+					<li class="home"><a href="index.html">Home</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section id="learn-jquery-ex">
+			<h1>Learn<br/> By Doing</h1>
+		</section>
+		<!--<div id="container">-->
+			<section id="exercises">
+				<h2>Fundamental Exercises Part I</h2>
+				<dl>
+					<dt>1. Using jQuery find all textareas, and makes a border. Then adds all paragraphs to the jQuery object to set their borders red.</dt>
+					<dd id="rb">
+						<textarea>Type some text</textarea> <textarea>Type some more text</textarea>
+						<p>JavaScript</p>
+						<p>jQuery</p><br/>
+						<button id="ab">Add Border</button>
+						<script type="text/javascript">
+							$(document).ready(function(){
+								//q1
+								$('#ab').click(function(){
+									$('#rb p, #rb textarea').css('background-color', 'red')
+								});
+								//q2
+								$('#ap').click(function(){
+									$('#hp').prepend('<p>A paragraph was appened</p>');
+								});
+								//q3
+								$('#ac').click(function(){
+									$('#lp p:last').addClass('w3r_font_color w3r_background');
+								});
+								//q4
+								$('#anc').click(function(){
+									$('.w3r_bg_orange').addClass('w3r_font_color');
+								});
+								//q5
+								$('#ce').click(function(){
+									var ec = $('*').length;
+									$('#dec').text('Number of element(s) found: ' + ec);
+								});
+								//q6
+								$('#cde').click(function(){
+									var ec = $('#iddiv').children().length;
+									$('#ddec').text('Number of element(s) found: ' + ec);
+								});
+								//q7
+								$('#cs').click(function(){
+									$('input[value=Red]').siblings().text('New Gender');
+								});
+								//q8
+								$('#anp').click(function(){
+									$('input[name!=color]').siblings().append(' :Not Red');
+								});
+
+							
+							});//end of doc.ready()
+						</script>
+					</dd>
+					<dt>2. Create a paragraph element with some text and append it to the end of the document body using jQuery.</dt>
+					<dd id="hp">
+						<br/>
+						<button id="ap">Append a Paragraph</button>
+					</dd>
+					<dt>3. Using jQuery add the class "w3r_font_color" and w3r_background to the last paragraph element.</dt>
+					<dd id="lp">
+						<p>PHP</p>
+						<p>Java</p>
+						<p>Python</p><br/>
+						<button id="ac">Add Class</button>
+					</dd>
+					<dt>4. Using jQuery add a new class to an element that already has a class.</dt>
+					<dd>
+						 <p class="w3r_bg_orange">The best way we learn anything is by practice and exercise questions.</p><br/>
+						 <button id="anc">Add Class</button>
+					</dd>
+					<dt>5. Using jQuery count every element (including head, body, etc.) in the document.</dt>
+					<dd>
+						<p id="dec"></p><br/>
+						<button id="ce">Count Element(s)</button>
+					</dd>
+					<dt>6. Using jQuery count all elements within a division.</dt>
+					<dd>
+						<div id="iddiv"> 
+							<span>This is a span</span>
+							<p>This is a Paragraph</p>
+						</div><br/>
+						<p id="ddec"></p><br/>
+						<button id="cde">Count Element(s)</button> 
+					</dd>
+					<dt>7. Finds all inputs with a value of "Red" and changes the text of the next sibling span.</dt>
+					<dd>
+						<div>
+							<label>
+								<input type="radio" name="color"  value="Red"/>
+								<span>Male</span>
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="radio" name="color"  value="Green"/>
+								<span>Female</span>
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="radio" name="color"  value="Black"/>
+								<span>Hybrid</span>
+							</label>
+						</div><br/>
+						<button id="cs">Change Siblings</button>
+					</dd>
+					<dt>8. Finds all inputs that don't have the name 'color' and appends text to the span next to it.</dt>
+					<dd>
+						<div>
+							<input type="radio" name="color"  value="Red">
+							<span>Red</span>
+						</div>
+						<div>
+							<input type="radio" value="Cold Fusion">
+							<span>Sky</span>
+						</div>
+						<div>
+							<input type="radio" name="accept"  value="Evil Plans">
+							<span>Sea</span>
+						</div><br/>
+						<button id="anp">Append to Siblings</button>
+					</dd>
+					
+				</dl>
+			</section>
+			<footer>
+				<p>Copyright &copy; 2017 | Designed and Coded by Jean Morris | Exercises by w3resource.com</p>
+			</footer>
+		<!--</div>-->
+	</body>
+</html>

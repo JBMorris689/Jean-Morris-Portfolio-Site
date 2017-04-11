@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="eng">
+	<head>
+		<title>W3 Resourse JQ Exercises</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<media name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style>
+			.ch{
+				background-color: gray;
+				display: inline;
+				height: 500px;
+				width: 500px;
+				position: relative;
+			}
+			#st{
+				overflow: auto;
+				width: 225px;
+				height: 125px;
+				position: relative;
+			}
+			.fc{
+				text-decoration: underline;
+			} 
+			.tc{
+				color: green;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li class="site-name"><a href="index.html">W3 Resources jQuery Exercises</a></li>
+					<li class="home"><a href="index.html">Home</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section id="learn-jquery-ex">
+			<h1>Learn<br/> By Doing</h1>
+		</section>
+		<!--<div id="container">-->
+			<section id="exercises">
+				<h2>jQuery-CSS Exercises</h2>
+				<dl>
+					<dt>1. Get the background color of an element. Click on the element and get the background color.</dt>
+					<dd>
+						<p class="ch">Click the element</p><br/><br/>
+						<p id="d"></p>
+						<script type="text/javascript">
+							$(document).ready(function(){
+								//q1
+								$('.ch').click(function(){
+									var bg = $(this).css('background-color');
+									$('#d').text('Element color: ' + bg);
+								});
+								//q2
+								$('#ac').click(function(){
+									$(this).addClass('ch');
+								});		
+								//q3
+								$('#wah').click(function(){
+									var w = $(this).width();
+									var h = $(this).height();
+									$('#wah').text('Element width: ' + w + ' | ' + 'Element height: ' + h);
+								});
+								//q4
+								$('#gsv').click(function(){
+									var st = $('#st').scrollTop();
+									var sl = $('#st').scrollLeft();
+									$(this).text('Scroll top: ' + st + ' | ' +  'Scroll left: '+ sl);
+								});
+								//q5
+								$('.fc').click(function(){
+									var hc = $(this).hasClass('fc');
+									$(this).text(hc);
+								});
+								//q6
+								$('#tggl').on({
+									click: function(){
+										$(this).toggleClass('tc')
+									},
+									mouseover: function(){
+										$(this).css('cursor', 'pointer');
+									}
+								});//end on()
+								
+								
+								
+							});
+						</script>
+					</dd>
+					<dt>2. Add the following class "myclass" to the matched elements.</dt>
+					<dd><p id="ac">Click to add "myclass"</p>
+					</dd>
+					<dt>3. Find the widths and heights of various elements.</dt>
+					<dd><p id="wah">Click for widths and heights</p></dd>
+					<dt>4. Get the scroll top and left of an element.</dt>
+					<dd><p id="st">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br/>
+					<p id="gsv">Get scroll value</p>
+					</dd>
+					<dt>5. Find an element that contains a specified class.</dt>
+					<dd><p class="fc">Find class</p></dd>
+					<dt>6. Toggle a specified class when an element is clicked.</dt>
+					<dd id="tggl">Click to toggle</dd>
+				</dl>
+			</section>
+			<footer>
+				<p>Copyright &copy; 2017 | Designed and Coded by Jean Morris | Exercises by w3resource.com</p>
+			</footer>
+		<!--</div>-->
+	</body>
+</html>

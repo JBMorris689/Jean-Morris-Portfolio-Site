@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="eng">
+	<head>
+		<title>W3 Resourse JS Exercises</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<media name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		<section id="header">
+			<h1><a href="index.html">W3 Resourse's JS Exercises</a></h1>
+			<h1 id="back-home"><a href="index.html">Home</a></h1>
+		</section>
+		<div id="container">			
+			<section id="ex-name-section">
+				<h1>Learn by Doing</h1>
+			</section>
+			<section id="exercises-area">
+				<h1>Object Exercises</h1>
+				<ul>
+					<li class="ex-q">1. Write a JavaScript program to list the properties of a JavaScript object.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							var student = {
+								name: "Van Jones",
+								sclass: "VI",
+								rollno: 12
+							};
+							
+							for(var x in student){
+								document.write(x + '<br/>');
+							}
+						</script>
+					</li>
+					<li class="ex-q">2. Write a JavaScript program to delete the rollno property from the following object. Also print the object before or after deleting the property.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							var student = {
+								name: "Van Jones",
+								sclass: "VI",
+								rollno: 12
+							};
+							
+							delete student.rollno;
+							
+							for(var x in student){
+								document.write(x + '<br/>');
+							}
+						</script>
+					</li>
+					<li class="ex-q">3. Write a JavaScript program to get the length of an JavaScript object.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							var student = {
+								name: "David Rayy",
+								sclass: "VI",
+								rollno: 12
+							};
+							//IE <9
+							document.write('The length of the student object is ' + Object.keys(student).length);
+							
+							//cross browser compability
+							var count = 0;
+							
+							for(var k in student){
+								if(student.hasOwnProperty(k)){
+									count++;
+								}								 
+							}
+							//document.write('<br/>' + '<br/>' + 'The length of the student object is ' + count);
+						</script>
+					</li>
+					<li class="ex-q">4. Write a JavaScript program to display the reading status (i.e. display book name, author name and reading status) of the following books.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							var library = [ 
+								{
+								   author: 'Bill Gates',
+								   title: 'The Road Ahead',
+								   readingStatus: true
+								},
+								{
+								   author: 'Steve Jobs',
+								   title: 'Walter Isaacson',
+								   readingStatus: true
+								},
+								{
+								   author: 'Suzanne Collins',
+								   title:  'Mockingjay: The Final Book of The Hunger Games', 
+								   readingStatus: false
+								}];
+								
+								for(var i=0; i<library.length; i++){
+									document.write(library[i].title + ' by ' + library[i].author + '<br/>');
+									if(library[i].readingStatus === true){
+										document.write('have read' + '<br/>');
+									}else{
+										document.write('need to read '+ '<br/>');
+									}
+								}	
+						</script>
+					</li>
+					<li class="ex-q"></li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q"></li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q"></li>
+					<li class="ex-a">
+						<script type="text/javascript">
+					
+						</script>
+					</li>
+					<li class="ex-q"></li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q"></li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q"></li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q"></li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q"></li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+				</ul>
+			</section>
+			<footer>
+				<p>Copyright &copy; 2016 | Designed and Coded by Jean Morris | Exercises by w3resource.com</p>
+			</footer>
+		</div>
+	</body>
+</html>

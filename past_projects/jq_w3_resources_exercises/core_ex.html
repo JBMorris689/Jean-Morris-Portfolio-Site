@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="eng">
+	<head>
+		<title>W3 Resourse JQ Exercises</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<media name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li class="site-name"><a href="index.html">W3 Resources jQuery Exercises</a></li>
+					<li class="home"><a href="index.html">Home</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section id="learn-jquery-ex">
+			<h1>Learn<br/> By Doing</h1>
+		</section>
+		<!--<div id="container">-->
+			<section id="exercises">
+				<h2>jQuery-Core Exercises</h2>
+				<dl>
+					<dt>1. Find all p elements that are children of a div element and apply a background to them.</dt>
+					<dd><div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p><br/><p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p><br/><p>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div><br/>
+					<p id="ab">Click to add bg-color</p>
+						<script type="text/javascript">
+							//q1
+							$(document).ready(function(){
+								$('#ab').click(function(){
+									$('div >p').css('background-color', 'green');
+								})
+							//q2
+							$('#bg').click(function(){
+								$(document.body).css('background-color', 'red');
+							});
+							//q3
+							$('#he').click(function(){
+								$(demo_form.elements).hide();
+							});
+							//q4
+							$('#so').click(function(){
+								var dso = $('#myselect option:selected').text();
+								$('#do').text(dso + ' was selected');
+							});
+							//q5
+							$('#cb').click(function(){
+								$('#user-sex [value = male]').prop('checked', true);
+							});
+							//q6
+							$('#ae').click(function(){
+								$('#a').appendTo('#b');
+							});
+							//q7
+								$('#se').click(function(){
+									$('#hg h3:last').css('color' , 'blue');
+								});
+							//q8
+							$( '#hg1 h3').each(function( index, elem ){
+								$(elem).prepend('<i>' + index + ': </i>');
+							});
+							//q9
+							var href = $('#tut').attr('href');
+							$('#dh').text(href);
+							
+							$('#ch').click(function(){
+								$('#tut').attr('href', 'www.w3resource.com/mysql/mysql-tutorials.php');
+								$('#tut').text('New Link');
+								$('#dh').text('link changed');
+							});
+							
+							});//end of doc.ready()
+						</script>
+					</dd>
+					<dt>2. Set the background color of page to red.</dt>
+					<dd><p id="bg">Click to set bg-color</p></dd>
+					<dt>3. Hide all the input elements within a form.</dt>
+					<dd>
+						<form name='demo_form'>
+							First Name:<input type="text" name="fname"/><br/>
+							Last Name:<input type="text" name="lname"><br/>
+							<input type="submit" value="Submit"/>
+						</form><br/>
+						<p id="he">Click to Hide Input Elements</p>
+					</dd>
+					<dt>4. Find the specific option tag text value of a selected option.</dt>
+					<dd>
+						<select id="myselect">
+							<option value="1">Option-1</option>
+							<option value="2">Option-2</option>
+							<option value="3">Option-3</option>
+						</select><br/><br/>
+						<p id="do"></p><br/>
+						<p id="so">Click to Get Selected Option Value</p>		
+					</dd>
+					<dt>5. Check/uncheck a checkbox input or radio button?</dt>
+					<dd>
+						<form id="user-sex" action="">
+							<input type="radio" name="sex" value="male"/>Male<br>
+							<input type="radio" name="sex" value="female"/>Female
+						</form><br/>
+						<p id="cb">Click to Check/Uncheck a Button</p>
+					</dd>
+					<dt>6. Write jQuery code to append a div element (and all of its contents) dynamically to the another element.</dt>
+					<dd>
+						<div id="a"><h1>Lorem Ipsum</h1><p>Lorem ipsum ismap tosem</p></div><br/>
+						<div id="b"><h1>New Lorem Ipsum</h1></div><br/>
+						<p id="ae">Click to Append Div Elmenents</p>
+					</dd>
+					<dt>7. Write a jQuery Code to get a single element from a selection.</dt>
+					<dd>
+						<hgroup id="hg">
+							<h3>Html Tutorial</h3>
+							<h3>Mongodb Tutorial</h3>
+							<h3>Python Tutorial</h3>
+						</hgroup><br/>
+						<p id="se">Click to Get Single Element</p>
+					</dd>
+					<dt>8. Write jQuery Code to add a <b> tag at the beginning of the list item, containing the index of the list item.</dt>
+					<dd>
+						<hgroup id="hg1">
+							<h3>Html Tutorial</h3>
+							<h3>Mongodb Tutorial</h3>
+							<h3>Python Tutorial</h3>
+						</hgroup><br/><p>Click to Add Bold Tag</p>
+					</dd>
+					<dt>9. Write jQuery Code to change the hyperlink and the text of a existing link.</dt>
+					<dd>
+						<a target="_blank" href="www.w3resource.com" id="tut">SQLite Tutorial</a><br/><br/>
+						<p id="dh"></p><br/>
+						<p id="ch">Click to Change Hyperlink Text</p>
+					</dd>
+					
+				</dl>
+			</section>
+			<footer>
+				<p>Copyright &copy; 2017 | Designed and Coded by Jean Morris | Exercises by w3resource.com</p>
+			</footer>
+		<!--</div>-->
+	</body>
+</html>

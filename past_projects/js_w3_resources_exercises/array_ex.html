@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="eng">
+	<head>
+		<title>W3 Resourse JS Exercises</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<media name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		<section id="header">
+			<h1><a href="index.html">W3 Resourse's JS Exercises</a></h1>
+			<h1 id="back-home"><a href="index.html">Home</a></h1>
+		</section>
+		<div id="container">			
+			<section id="ex-name-section">
+				<h1>Learn by Doing</h1>
+			</section>
+			<section id="exercises-area">
+				<h1>Array Exercises</h1>
+				<ul>
+					<li class="ex-q">1. Write a JavaScript function to check whether an `input` is an array or not.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function isArray(userInput){
+								if(Array.isArray(userInput)){
+									document.write("The input IS an array!");
+								}else{
+									document.write("The input is NOT an array!")
+								}
+							}
+							isArray(["w3resources"]);
+						</script>
+					</li>
+					<li class="ex-q">2. Write a JavaScript function to clone an array.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							//var names = ["Naej", "Rezneb", "Sirrom"];
+							function cloneArray(array){
+								return array.slice(0);
+							}
+							//document.write(names);
+							document.write(cloneArray([1,2,4,0]) + "<br/>");
+							document.write(cloneArray([0,2,[4,0]]));
+						</script>
+					</li>
+					<li class="ex-q">3. Write a simple JavaScript program to join all elements of the following array into a string.<br/><br/> Sample array : myColor = ["Red", "Green", "White", "Black"];</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function joinArrayElement(){
+								var colorArray = ['Red', 'Green', 'White', 'Black'];
+								//join the array elements
+								var joinArrayElement = colorArray.join(', ');
+								document.write(joinArrayElement);
+							}
+							joinArrayElement();
+						</script>
+					</li>
+					<li class="ex-q">4. Write a JavaScript program which accept a number as input and insert dashes (-) between each numbers.</li>
+					<li class="ex-a">
+						<span id="dash-disp"></span><br/><br/>
+						<button id="add-dash">Add Dash</button>
+						<script type="text/javascript">
+							function insertDash(){
+								//prompt user for number
+								var userNum = prompt('Enter a combination of numbers');
+								//convert user input to array obj
+								userNumArray = userNum.split('').join('-');
+								document.getElementById('dash-disp').innerText = userNumArray;
+							}
+							document.getElementById('add-dash').addEventListener('click', insertDash);
+						</script>
+					</li>
+					<li class="ex-q">5. Write a JavaScript program to sort the items of an array.<br/><br/><i>Sample array:</i>var arr1 = [ 3, 8, 7, 6, 5, -4, 3, 2, 1 ];<br/>
+					<i>Sample Output:</i> -4,-3,1,2,3,5,6,7,8</li>
+					<li class="ex-a">
+						<script type="text/javascript">	
+							//function arraySort(){
+								var numArray = [3, 8, -3, 6, 5, -4, 3, 2, 7, 1];
+								//sort array items with sort()
+								sortArray = numArray.sort(function(a,b){
+									return a-b;
+								});
+								
+								document.write(sortArray);
+							//}
+						</script>
+					</li>
+					<li class="ex-q">6. Write a JavaScript program which accept a string as input and swap the case of each character. For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function swapCharCase(strInput){
+								document.write(strInput);
+							}
+							swapCharCase('The Quick Brown Fox');
+						</script>
+					</li>
+					<li class="ex-q">7. Write a JavaScript program which prints the elements a multi-dimentional array.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							intArray = [[5, 10], [20, 30], [70, 100]];
+							//for(i=0; i<intArray.length; i++){
+								//document.write(intArray[i] + "<br/>");
+							//}
+							//for(var i in intArray){
+								//console.log('Row' + i)
+							//}
+							/*
+							// a sample 2-D array 
+							var a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+							 
+							for (var i in a) 
+							{
+							   console.log("row " + i);
+							   for (var j in a[i]) 
+								 {
+								  console.log(" " + a[i][j]);
+								 }
+							}
+							*/
+						</script>
+					</li>
+					<li class="ex-q">10. Write a JavaScript program to add items in an blank array and display the items.</li>
+					<li class="ex-a">
+						<form>
+							<input type="text" id="array-element"/><br/>
+							<input type="button" onclick="pushItems()" id="add-element" value="Add Element"/>
+							<input type="button" onclick="displayItems()" id="display-element" value="Display Element"/><br/>
+						</form><hr/>
+						<div id="array-display-area"></div>
+						<script type="text/javascript">
+							//style input box
+							document.getElementById('array-element').style.width = '205px';
+							
+							//global empty array
+							var arrayItems = [];
+							
+							//function to push items to array
+							function pushItems(){
+								arrayItems.push(document.getElementById('array-element').value);
+								//return arrayItems;
+							}
+							//function to display array's items
+							function displayItems(){
+								for(var i=0; i<arrayItems.length; i++){
+									document.write("Element " + i + ":" + " " + arrayItems[i] + "<br/>");
+								}
+							}
+							//clear input box after add button is pressed
+								document.getElementById('add-element').addEventListener('click',function(){
+									document.getElementById('array-element').value = '';
+								});
+								
+								//refocus to input box after add button is pressed
+								document.getElementById('add-element').addEventListener('click',function(){
+									document.getElementById('array-element').focus();
+								});
+						</script>
+					</li>
+					<li class="ex-q">11. Write a JavaScript program to shuffle an array.</li>
+					<li class="ex-a">						
+						<script type="text/javascript">
+							var numsArray = [5, 3, 1, 2, 4];
+							document.write(numsArray + '<br/>' + '<br/>');
+							
+							var randomizeArray = numsArray.sort(function(a,b){
+								return Math.floor(Math.random() * numsArray.length);
+							});
+							
+							function randArray(){
+								//document.write();
+								document.getElementById('array-dispaly').innerHTML = randomizeArray;
+							}
+						</script>
+						<span id="array-dispaly"></span>
+						<br/><br/><button onclick="randArray()">Shuffle/Sort Array</button>
+					</li>
+					<li class="ex-q">13. Write a JavaScript program to perform a binary search</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							var lettersArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'Y', 'Z'];
+							
+							document.write(lettersArray.indexOf('B'));
+						</script>
+					</li>
+					<li class="ex-q">14. Write a JavaScript program to find duplicate values in a JavaScript array.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							
+						</script>
+					</li>
+					<li class="ex-q">15. Write a JavaScript function to sort the following array of objects by title value.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							var library = [ 
+							   { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254},
+							   { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264},
+							   { author: 'Suzanne Collins', title: 'Mockingjay', libraryID: 3245}
+							];
+							
+							function sortByTitle(x,y){
+								if(x.title < y.title)
+								return -1;
+								
+								if(x.title > y.title)
+								return 1;
+								
+								return 0;
+							}
+							
+						//console.log(library.sort(sortByTitle)); 
+						
+						</script>
+					</li>
+					<li class="ex-q">16. Write a JavaScript function to merge two arrays and removes all duplicates elements.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+					
+						</script>
+					</li>
+					<li class="ex-q">17. Write a JavaScript function to remove a specific element from an array.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q">18. Write a JavaScript script to empty an array keeping the original.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q">19. Write a JavaScript function to get nth largest element from an unsorted array.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q">20. Write a JavaScript function to get a random item from an array.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q">21. Write a JavaScript function to create a specified number of elements with pre-filled numeric value array.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q">22. Write a JavaScript function to move an array element from one position to another.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q">23. Write a JavaScript function to filter false, null, 0 and blank values from an array.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+
+				</ul>
+			</section>
+			<footer>
+				<p>Copyright &copy; 2016 | Designed and Coded by Jean Morris | Exercises by w3resource.com</p>
+			</footer>
+		</div>
+	</body>
+</html>

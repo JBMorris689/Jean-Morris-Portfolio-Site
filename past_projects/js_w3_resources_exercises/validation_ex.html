@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="eng">
+	<head>
+		<title>W3 Resourse JS Exercises</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<media name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		<section id="header">
+			<h1><a href="index.html">W3 Resourse's JS Exercises</a></h1>
+			<h1 id="back-home"><a href="index.html">Home</a></h1>
+		</section>
+		<div id="container">			
+			<section id="ex-name-section">
+				<h1>Learn by Doing</h1>
+			</section>
+			<section id="exercises-area">
+				<h1>Validation Exercises</h1>
+				<ul>
+					<li class="ex-q">1. Write a JavaScript function to validate whether a given value type is boolean or not.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function isBoolean(value){
+								if(value === true || value === false || Object.prototype.toString.call(value) === '[object Boolean]'){
+									document.write(value + ' is a boolean');
+								}
+								else{
+									document.write(value + ' is NOT a boolean');
+								}
+							}	
+							
+							isBoolean(false);
+						</script>
+					</li>
+					<li class="ex-q">2. Write a JavaScript function to validate whether a given value type is error or not.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function validateType(valueType){
+								if(Object.prototype.toString.call(valueType) === '[object String]'){
+									document.write('Valid value(s) entered');
+								}else{
+									document.write('Error!! Please enter string value type!');
+								}
+							}
+							validateType(false);
+						</script>
+					</li>
+					<li class="ex-q">3. Write a JavaScript function to validate whether a given value type is NaN or not.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function is_NaN(number){
+								if(!isNaN(number)){
+									document.write( number + ' is a number');
+								}else{
+									document.write( number + ' is NOT a number');
+								}
+							}
+							is_NaN(15);
+						</script>
+					</li>
+					<li class="ex-q">4. Write a JavaScript function to validate whether a given value type is null or not.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function isNull(value){
+							if(value === '' || value === null){
+									document.write(' is null');
+								}else{
+									document.write(' is NOT null');
+								}
+							}
+							isNull("");
+						</script>
+					</li>
+					<li class="ex-q">5. Write a JavaScript function to validate whether a given value is number or not. </li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function isNumber(num){
+								if(Object.prototype.toString.call(num) === '[object Number]'){
+									document.write( num + ' is a number');
+								}else{
+									document.write( num + ' is NOT a number');
+								}
+							}
+							isNumber(18);
+						</script>
+					</li>
+					<li class="ex-q">5. Write a JavaScript program to test the first character of a string is uppercase or not.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function isfirstCharUpper(string){
+								string.split(' ');
+								if(string[0] === string[0].toUpperCase()){
+									document.write(string + ' :first letter is not in uppercase');
+								}else{
+									document.write(string + ' :first letter is not in uppercase');
+								}
+							}
+							isfirstCharUpper('eBe');
+						</script>
+					</li>
+					<li class="ex-q">6. Write a JavaScript program to check a credit card number (format 9999-9999-9999-9999).</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							/*function creditCardFormat(crdNum){
+								if(crdNum === crdNum.match('/[^0-9(-)]/ig'))
+							}*/
+						</script>
+					</li>
+					<li class="ex-q"></li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q"></li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q"></li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q"></li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q"></li>
+					<li class="ex-a">
+						<form>
+							<input type="submit" value="Get Page Url" id="url"/>
+						</form>
+						<script type="text/javascript">
+
+						</script>
+					</li>
+				</ul>
+			</section>
+			<footer>
+				<p>Copyright &copy; 2016 | Designed and Coded by Jean Morris | Exercises by w3resource.com</p>
+			</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="eng">
+	<head>
+		<title>W3 Resourse JS Exercises</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<media name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		<section id="header">
+			<h1><a href="index.html">W3 Resourse's JS Exercises</a></h1>
+			<h1 id="back-home"><a href="index.html">Home</a></h1>
+		</section>
+		<div id="container">			
+			<section id="ex-name-section">
+				<h1>Learn by Doing</h1>
+			</section>
+			<section id="exercises-area">
+				<h1>Conditional Statement and Loops Exercises</h1>
+				<ul>
+					<li class="ex-q">1. Write a JavaScript program that accept two integers and display the larger.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function findLargerInt(intOne, intTwo){
+								var intOne = Number(intOne);
+								var intTwo = Number(intTwo);
+
+								if(intOne > intTwo){
+									document.write(intOne + " is greater");
+								}else if(intOne < intTwo){
+									document.write(intTwo + " is greater");
+								}else if(intOne == intTwo){
+									document.write("Both numbers are equal");
+								}else if(isNaN(intOne) && isNaN(intTwo)){
+									document.write("Please enter two valid numbers");
+								}else{
+									document.write("Invalid numbers!! Please!!!!!");
+								}
+							}//end of function
+							findLargerInt(15,5);
+						</script>
+					</li>
+					<li class="ex-q">2. Write a JavaScript conditional statement to find the sign of product of three numbers</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function findProductSign(numOne, numTwo, numThree){
+								var numOne = numOne,
+									numTwo = numTwo,
+									numThree = numThree,
+									//multiply nums
+									prodResult = numOne*numTwo*numThree,
+									//place nums in array
+									numArray = [numOne, numTwo, numThree];
+								
+								document.write(numArray + "<br/>"); 
+ 								//math.sign returns sign of number; 1 pos; -1 neg
+								if(Math.sign(prodResult) == 1){
+									document.write("The product sign is: (+)");
+								}else if(Math.sign(prodResult) == -1){
+									document.write("The product sign is: (-)");
+								}else{
+									document.write("Invalid input");
+								}
+							}
+							findProductSign(-5, 8, 10);
+						</script>
+					</li>
+					<li class="ex-q">3. Write a JavaScript conditional statement to sort three numbers.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function sortNumber(numOne, numTwo, numThree){
+								var numOne = numOne,
+									numTwo = numTwo,
+									numThree = numThree,
+									numArray = [numOne, numTwo, numThree];
+
+									document.write(numArray + "<br/>")
+									//sort number
+									numArraySort = numArray.sort(function(a,b){
+										return a-b;
+									})
+
+									document.write("Numbers sorted: " + numArraySort);	
+							}
+							sortNumber(5,15,10); 
+						</script>
+					</li>
+					<li class="ex-q">4. Write a JavaScript conditional statement to find the largest of five numbers.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function findLargestNumber(numOne, numTwo, numThree, numFour, numFive){
+								if(numOne>numTwo && numOne>numThree && numOne>numFour && numOne>numFive){
+									document.write(numOne + " is the largest number");
+								}else if(numTwo>numOne && numTwo>numThree && numTwo>numFour && numTwo>numFive){
+									document.write(numTwo + " is the largest number");
+								}else if(numThree>numOne && numThree>numTwo && numThree>numFour && numThree>numFive){
+									document.write(numThree + " is the largest number");
+								}else if(numFour>numOne && numFour>numTwo && numFour>numThree && numFour>numFive){
+									document.write(numFour + " is the largest number");
+								}else if(numFive>numOne && numFive>numTwo && numFive>numThree && numFive>numFour){
+									document.write(numFive + " is the largest number");
+								}else{
+									document.write("Invalid input");
+								}
+							}//end of function
+							findLargestNumber(-5,-2,-6,0,-1);
+						</script>
+					</li>
+					<li class="ex-q">5. Write a JavaScript for loop that will iterate from 0 to 15. For each iteration, it will check if the current number is odd or even, and display a message to the scree.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+								for(var i = 0; i<=15; i++ ){
+									if(i%2 ==0){
+										document.write(i + " :Even" + "<br/>");	
+									}else{
+										document.write(i + " :Odd" + "<br/>");
+									}
+								}
+						</script>
+					</li>
+					<li class="ex-q">6. Write a JavaScript program which compute, the average marks of the following students Then, this average is used to determine the corresponding grade.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							var studentGrade = [
+								["David", 841],
+								["Vinoth", 41],
+								["Divya", 41],
+								["Ishitha", 41],
+								["thomas", 41]
+							];
+							//hold class grades
+							var classGrades = 0;
+
+							for(var i = 0; i<studentGrade.length;i++){
+								classGrades += studentGrade[i][1];
+								var classAvg = classGrades/studentGrade.length;
+							}
+							document.write("Class average: " + classAvg);
+							//condtional
+							if(classAvg<100 && classAvg>90){
+								document.write( " Grade: A")
+							}else if(classAvg<90 && classAvg>80){
+								document.write(  " Grade: B");
+							}else if(classAvg<80 && classAvg>70){
+								document.write( " Grade: C");
+							}else if(classAvg<70 && classAvg>60){
+								document.write(" Grade: D");
+							}else if(classAvg<60){
+								document.write( " Grade: F");
+							}else{
+								document.write( "!!!! Sum Tin Wong!!");
+							}
+						</script>
+					</li>
+					<li class="ex-q">7. Write a JavaScript program which iterates the integers from 1 to 20. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz". </li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							for(i = 1; i<=20; i++){
+								if(i % 3 == 0 && i % 5 !== 0){
+									document.write(i + " Fizz" + "<br/>");
+								}else if(i % 5 == 0 && i % 3 !== 0){
+									document.write(i + " Buzz" + "<br/>");
+								}else if(i % 3 == 0 && i % 5 == 0){
+									document.write(i + " FizzBuzz" + "<br/>");
+								}else{
+									document.write(i + "<br/>");
+								}
+							}//end of for loop
+						</script>
+					</li>
+					<li class="ex-q">8. Write a JavaScript program to find and print the first 5 happy numbers. </li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q">9. Write a JavaScript program to find the armstrong numbers of 3 digits. </li>
+					<li class="ex-a">
+						<script type="text/javascript">
+
+						</script>
+					</li>
+					<li class="ex-q">10. Write a JavaScript program to construct the following pattern, using a nested for loop</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							var chr = "";
+							for(i = 1; i<=5; i++){
+								chr += "*";
+								document.write(chr + "<br/>");
+							}
+						</script>
+					</li>
+					<li class="ex-q">11. Write a JavaScript program to compute the greatest common divisor (GCD) of two positive integers. </li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function findGreatestCommonDivisor(divisorOne, divisorTwo){
+
+							}
+						</script>
+					</li>
+					<li class="ex-q">12. Write a JavaScript program to sum the multiples of 3 and 5 under 100. </li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function findMultiplesOf(){
+								var multipleSum = 0;
+								for(var i = 1; i<=100; i++){
+									if(i % 3 ==0 && i % 5 ==0){
+										//divisible by 3 and 5! and add the divisibles
+										multipleSum += i;
+										document.write(i + "<br/>");
+									}
+								}
+								document.write("___<br/>" + multipleSum);
+							}
+							findMultiplesOf();
+						</script>
+					</li>
+				</ul>
+			</section>
+			<footer>
+				<p>Copyright &copy; 2016 | Designed and Coded by Jean Morris | Exercises by w3resource.com</p>
+			</footer>
+		</div>
+	</body>
+</html>

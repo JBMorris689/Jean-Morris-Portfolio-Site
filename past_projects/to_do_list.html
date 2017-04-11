@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="uff-9"/>
+		<title>jQuery To-Do-List</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<style>	
+			@import url('https://fonts.googleapis.com/css?family=Ranga');
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html{
+				height: 100%;
+			}
+			body{
+				height: 100%;
+				text-align: center;
+				background: linear-gradient(to top, #666699 0%, #003366 89%);
+				font-family: 'Ranga', cursive;
+			}
+			header{
+				margin: 0 auto;
+				text-align: center;
+				color: #e6f2ff;
+				padding-top: 2em;
+			}
+			header h1{
+				border-bottom: 0.5em solid #666699;
+				font-size: 3.0em;
+			}
+			ul{
+				background-color: #e6f2ff;
+				width: 35%;
+				margin: 0 auto;
+				list-style: none;
+				font-size: 1.5em;
+				color: #47476b;
+				font-weight: 100;
+				padding: 0.5em;
+				border: 0.3em solid #666699;
+				border-bottom: none;
+			}
+			ul li{
+				border-bottom: 0.01em solid #ccc;	
+				text-align: left;
+			}
+			ul li:hover{
+				cursor: pointer;
+				background-color: #cce5ff;
+			}
+			form{
+				font-size: 1.5em;
+				width: 35%;
+				margin: 0 auto;
+				margin-top: 0.2em;
+				padding: 0.5em;
+				background-color: #e6f2ff;
+				border-radius: 0 0 0.4em 0.4em;
+				border: 0.3em solid #666699;
+				border-top: none;
+			}
+			input[type=text]:focus{
+				outline: none;
+				background-color: #f0f0f5;
+			}
+			input[type=text]{
+				width: 95%;
+				margin: 0.5em;
+				line-height: 2.2em;
+				border-radius: 0.5em;	
+				border: 0.2em solid #666699;	
+				color: #47476b;
+			}
+			input[type=button]{
+				background-color: #666699;
+				outline: none;
+				width: 5.5em;
+				padding: 0.5em;
+				border-radius: 0.5em;
+				color: #e6f2ff;
+			}
+			input[type=button]:disabled{
+				background-color: #ccc;
+			}
+			.completed{
+				text-decoration: line-through;
+				color: #7575a3;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<header>
+			<h1>jQuery To-Do-List</h1>
+			</header>
+			<ul id="my-to-do">
+				<li>Complete this project</li>
+				<li>Enhance this project backend, capitalize, global var</li>
+				<li>Link this project to my portfolio website</li>
+				<li>Complete this project</li>
+				<li>Find more projects to work on</li>
+			</ul>
+			<form>
+				<input type="text" id="item-to-add"/><br/>
+				<input type="button" id="add-to-list" value="Add"/>
+			</form>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//add to list
+				$('#add-to-list').click(function(){
+					var $myToDo = $('#item-to-add').val();
+					//var myToDoCap = $($myToDo).chartAt(0).toUpperCase();
+					$('#my-to-do').append('<li>' + $myToDo + '</li>');
+					//capitalize first letter
+					
+					//erase input last entry
+					$('#item-to-add').val('');
+				});
+				//click to cross-off
+				$('#my-to-do').children().click(function(){
+					$(this).toggleClass('completed');
+				});
+				//validation
+				$('#add-to-list').attr('disabled', true);
+				$('#item-to-add').keyup(function(){
+					if($('#item-to-add').val().length == 0){
+						$('#add-to-list').attr('disabled', true);
+					}else{
+						$('#add-to-list').attr('disabled', false);
+					}
+				});
+				$('#item-to-add').mouseout(function(){
+					if($('#item-to-add').val().length == 0){
+						$('#add-to-list').attr('disabled', true);
+					}else{
+						$('#add-to-list').attr('disabled', false);
+					}
+				});
+				//capitalize first letter
+				$('h1').click(function(){
+					var x = $('#item-to-add').val().charAt(0).toUpperCase(); 
+					var y = x.substr(1);
+					alert(y);
+				});
+			});//end of doc.ready()
+		</script>
+	</body>
+</html>

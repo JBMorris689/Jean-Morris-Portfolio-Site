@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="eng">
+	<head>
+		<title>W3 Resourse JS Exercises</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<media name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		<section id="header">
+			<h1><a href="index.html">W3 Resourse's JS Exercises</a></h1>
+			<h1 id="back-home"><a href="index.html">Home</a></h1>
+		</section>
+		<div id="container">			
+			<section id="ex-name-section">
+				<h1>Learn by Doing</h1>
+			</section>
+			<section id="exercises-area">
+				<h1>Basic Exercises</h1>
+				<ul>
+					<li class="ex-q">1. Write a JavaScript program to display the current day and time.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							//Array to assign name of the day
+							var weekDay = ["Sunday", " Monday", " Tuesday", " Wednesday", " Thursday", " Friday", " Saturday"]; 
+
+							//function to get current date
+							var currentDate = new Date();
+
+							//function to get the current hour-24 hrs; % 12
+							var currentHour = currentDate.getHours() % 12 || 12;
+							
+							//set am and pm
+							var meridiem = currentHour >= 12 ? 'AM' : 'PM';
+
+							//function to get the current minute
+							var currentMinute = currentDate.getMinutes();
+
+							//function to get the current second
+							var currentSecond = currentDate.getSeconds();
+
+							//function to get day of week (0-6)-array
+							var dayofWeek = weekDay[currentDate.getDay()];
+
+							//display current day
+							document.write("Today is: " + dayofWeek + "<br/>" + "<br/>" + "Current time: " + currentHour + ":" + currentMinute + ":" + currentSecond +" " + meridiem);
+						</script>
+					</li>
+					<li class="ex-q">2. Write a JavaScript program to print the contents of the current window.</li>
+					<li class="ex-a">
+						<p>Click button below to print current window content</p><br/>
+						<button id="print">Print</print>
+						<script type="text/javascript">
+							//initialize button
+							var printEvent = document.getElementById("print");
+							
+							//add eventlistener to button id
+							printEvent.addEventListener("click", printWindow);
+							
+							//function to print current screen
+							function printWindow(){
+								window.print();
+							}
+						</script>
+					</li>
+					<li class="ex-q">3. Write a JavaScript program to get the current date in short format.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							//var to get current date function
+							var curToday = new Date();
+
+							//get the month based of new Date object
+							var curMonth = curToday.getMonth() + 1;
+
+							//get the day based of new Date object
+							var curDate = curToday.getDate();
+
+							//get year based of new Date object
+							var curYear = curToday.getFullYear();
+
+							//add "0" if month or day is single digit
+							if(curMonth < 10){
+								curMonth = "0" + curMonth;
+							}
+							if(curDate < 10){
+								curDate = "0" + curDate;
+							}
+
+							//print result
+							document.write(curMonth +"/" +curDate +"/" +curYear);
+						</script>
+					</li>
+					<li class="ex-q">4. Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are given.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							//function to take three numbers
+							function findTriangleArea(sideOne, sideTwo, sideThree){
+								/* Herion's fumula- find sem-perimeter(s-p)
+
+								step 1: find s-p given the given the three numbers */
+								var semiPerimeter = (sideOne + sideTwo + sideThree) / 2;                                      
+								/*step 2: find area area = |/-------
+															s-p(s-a)(s-b)(s-c)*/
+
+								var area = semiPerimeter * (semiPerimeter-sideOne) * (semiPerimeter-sideTwo) * (semiPerimeter-sideThree);
+
+								//square root the number; sqrt() function
+								var result = Math.sqrt(area);
+								
+								//var return the result
+								return result.toFixed(1);
+							}//end of function findTriangleArea
+
+							//call function findAreaTriangle to calcualte and print
+							document.write(findTriangleArea(11, 12, 13));
+						</script>
+					</li>
+					<li class="ex-q">5. Write a JavaScript program to rotate the string in right direction by periodically removing one letter from the end of the string and attaching it to the front. </li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							function stringReverse(stringMsg){
+								//split into array with split() method
+								var splitString = stringMsg.split("");
+
+								//reverse method to reverse string
+								var reverseString = splitString.reverse();
+
+								//join method to put string together
+								joinString = reverseString.join("");
+
+								return joinString;
+							}
+							document.write(stringReverse("the time has come"));
+						</script>
+					</li>
+					<li class="ex-q">6. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							//get current date
+							var cDate = new Date("1900");
+
+							//get fullyear based of
+							var getYear = cDate.getFullYear() + 1;
+
+							//determine type of year
+							if(getYear % 4 !== 0){
+								document.write(getYear + " is a common year.");
+							}else if(getYear % 100 !== 0){
+								document.write(getYear + " is a leap year!!!!");
+							}else if(getYear % 400 !== 0){
+								document.write(getYear + " is a common year.");
+							}else{
+								document.write(getYear + " is a leap year!!!!");
+							}
+						</script>
+					</li>
+					<li class="ex-q">7. Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							/*for(var i = 2014; i <= 2050; i++){
+								var d = new Date(i, 0, 1);
+								if(d.getDay() === 0){
+									document.write(i + "; Years the 1st of January full on a Sunday" + "<br/>");
+								}
+							}*/
+							var NewDate = new Date(2034, 0, 1);
+							
+							document.write(NewDate + "<br/><br/>");
+
+							if(NewDate.getDay() === 0){
+								document.write("First day full on a Sunday" );
+							}else{
+								document.write("First day does not full on a Sunday");
+							}
+													
+						</script>
+					</li>
+					<li class="ex-q">8. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched".</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+						//Math.random method return flaoting number 0-0.999999999;  
+						var RandNumber = Math.ceil(Math.random() * 10);
+
+						//multiuplyer is max range number; 0-4.9999999999999999
+						//document.write(RandNumber * 5 + "<br/>");
+
+						//Math.floor to round number DOWN to non-floating number; 0
+						//document.write(Math.floor(RandNumber) + "<br/>");
+
+						//Math.ceil to round number UP to non-floating number; 1
+						//document.write(Math.ceil(RandNumber));
+
+						//print random number 1-10
+						//document.write(Math.ceil(Math.random() * 10) +"<br/>");
+
+						//print random number 1-10
+						//document.write(Math.floor(Math.random()*10 + 1));
+
+						//print random number
+						document.write("Randon number: " + RandNumber + "<br/><br/>");
+
+						//prompt user for number
+						//var userGuess = prompt("Guess a number between 1-10");
+
+						//print user guess
+						document.write("User's guess: " + userGuess);
+
+						//conditional statement
+						if(userGuess == RandNumber){
+							document.write(" ; Good guess!");
+						}else if(userGuess ==""){
+							prompt("Guess a number between 1-10");
+						}else if(isNaN(userGuess)){
+							prompt("Guess a NUMERIC value between 1-10");
+						}else{
+							document.write(" ; Not matched!");
+						}
+						</script>
+					</li>
+					<li class="ex-q">9. Write a JavaScript program to calculate days left until next Christmas.</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							document.write("Coming soon!!!");
+						</script>
+					</li>
+					<li class="ex-q">10. Write a JavaScript program to calculate multiplication and division of two numbers (form input from user).</li>
+					<li class="ex-a">
+						<b>Result:</b>&nbsp;<span id="result"></span><br/>
+						<form>
+							<input type="text" id="userNumOne"/><br/>
+							<input type="text" id="userNumTwo"/><br/>
+							<input type="submit" id="mult" value="Multiply"/>
+							<input type="submit" id="div" value="Divide"/>
+						</form>					
+						<script type="text/javascript">
+						function multiply(evnt){
+							//get user input values
+							var userNumOne = document.getElementById("userNumOne").value;
+							var userNumtwo = document.getElementById("userNumTwo").value;
+							//multiply user input
+							var multResult = userNumOne * userNumtwo;
+							//print result to span
+							document.getElementById("result").innerHTML = multResult;
+							
+							//prevent form from submitting
+							evnt.preventDefault();
+						}
+						function divide(evnt){
+							//get user input
+							var userNumOne = document.getElementById("userNumOne").value;
+							var userNumtwo = document.getElementById("userNumTwo").value;
+							//multiply user input
+							var divResult = userNumOne / userNumtwo;
+							//print result to span
+							document.getElementById("result").innerHTML = divResult;
+							
+							//prevent form from submitting
+							evnt.preventDefault();
+						}
+						//eventlisteners-call multiply function when clicked
+						document.getElementById("mult").addEventListener("click", multiply);
+						//eventlisteners-call divide function when clicked
+						document.getElementById("div").addEventListener("click", divide);
+						</script>
+					</li>
+					<li class="ex-q">11. Write a JavaScript program to convert temperatures to and from celsius, fahrenheit.[ Formula : c/5 = (f-32)/9 [ where c = temperature in celsius and f = temperature in fahrenheit ]</li>
+					<li class="ex-a">
+						<script type="text/javascript">
+							//convert to celsius
+							function toCelsius(fahrTemp){
+								//var ftemp = fahrTemp;
+								var celsToFahr = (fahrTemp - 32) * 5/9;
+								return celsToFahr.toFixed(1);
+
+							}
+							//print fahr to cels
+							document.write("To celsius: " + toCelsius(15) + "<br/>");
+							
+							//convert to fahrenheit
+							function toFahrenheit(celsTemp){
+								var fahrToCels = (celsTemp * 9/5) + 32;
+								return fahrToCels.toFixed(1);
+							}
+							//print cels to fahr
+							document.write("To fahrenheit: " + toFahrenheit(15));
+						</script>
+					</li>
+					<li class="ex-q">12. Write a JavaScript program to get the website URL (loading page)</li>
+					<li class="ex-a">
+						<form>
+							<input type="submit" value="Get Page Url" id="url"/>
+						</form>
+						<script type="text/javascript">
+							//get current page url
+							function currentPageUrl(evnt){
+								var pageUrl = window.location.href;
+								//alert current page url
+								alert(pageUrl);
+								//prevent form submision
+								evnt.preventDefault();
+							}
+
+							//eventlistener on submit button
+							document.getElementById("url").addEventListener("click", currentPageUrl);
+						</script>
+					</li>
+				</ul>
+			</section>
+			<footer>
+				<p>Copyright &copy; 2016 | Designed and Coded by Jean Morris | Exercises by w3resource.com</p>
+			</footer>
+		</div>
+	</body>
+</html>

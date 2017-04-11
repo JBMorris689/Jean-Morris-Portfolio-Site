@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="eng">
+	<head>
+		<title>W3 Resourse JQ Exercises</title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		<media name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<style>
+			*, dt p, dd p{
+				margin: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li class="site-name"><a href="index.html">W3 Resources jQuery Exercises</a></li>
+					<li class="home"><a href="index.html">Home</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section id="learn-jquery-ex">
+			<h1>Learn<br/> By Doing</h1>
+		</section>
+		<!--<div id="container">-->
+			<section id="exercises">
+				<h2>Practical Exercises Part I</h2>
+				<dl>
+					<dt><p>1. Test if jQuery is loaded.</p></dt>
+					<dd><button onclick="isjQuery()">Test jQuery</button>
+						<script type="text/javascript">
+							//q1
+							function isjQuery(){
+								if(typeof jQuery == 'undefined'){
+									alert('jquery has NOT loaded');
+								}else{
+									alert('jquery has NOT loaded');
+								}
+							};
+							$(document).ready(function(){
+								//q2
+								$('#stt').click(function(){
+									$('body').animate({scrollTop: 0}, 'slow');
+								});
+								//q3
+								$('#drc').click(function(e){
+									$('body').contextmenu(function(e){
+										e.preventDefault();
+									});
+								});
+								//q4
+								$('#dsb input[type=submit]').attr('disabled', 'disabled');
+								
+								$('#dsb input[type=radio]').mouseup(function(){
+									$('#dsb input[type=submit]').removeAttr('disabled');
+								});
+								//q5
+								
+								$('#lc').keyup(function(){
+									var charLimit = 20;
+									var txtCharLength = $('#lc').val().length;
+									
+									$('#dc').text(charLimit - txtCharLength);
+									
+									if(txtCharLength == charLimit){
+										$('#lc').attr('maxlength', '20');
+									}else{
+										$('#lc').removeAttr('maxlength');
+									}
+								});
+								//q6
+								
+									
+								
+							
+							});//end of doc.ready()
+						</script>
+					</dd>
+					<dt><p>2. Scroll to the top of the page with jQuery.</p></dt>
+					<dd>
+						<p>Learn by doing</p>  
+						<p>Learn by doing</p>  
+						<p>Learn by doing</p>
+						<p>Learn by doing</p>
+						<p>Learn by doing</p>
+						<p>Learn by doing</p>
+						<p>Learn by doing</p>
+						<p>Learn by doing</p>
+						<p>Learn by doing</p>
+						<p>Learn by doing</p>
+						<p>Learn by doing</p>
+						<p>Learn by doing</p>
+						<p>Learn by doing</p>
+						<p>Learn by doing</p>
+						<p>Learn by doing</p>
+						<p>Learn by doing</p>
+						<button id="stt">Scroll to Top</button>
+					</dd>
+					<dt><p>3. Disable right click menu in html page using jquery.</p></dt>
+					<dd><button id="drc">Disable Right Click Menu</button></dd>
+					<dt><p>4. Disable/enable the form submit button. Go to the editor
+						Disable the submit button until the visitor has clicked a check box.</p>
+					</dt>
+					<dd><p>Donate to Developer</p>
+						<form id="dsb" style="width:55%;border: 0px solid gray;">
+							<input type="radio" name="agree" value="yes"/>Yes
+							<input type="radio" name="agree" value="no"/>No<br/><br/>
+							<input type="submit" value="Submit"/>
+						</form>
+					</dd>
+					<dt><p>5. Limit character input in the textarea including count.</p></dt>
+					<dd>
+						<textarea id="lc"></textarea>
+						<p>Remaining Character(s):<span id="dc"> 20</span></p>
+					</dd>
+					<dt><p></p></dt>
+					<dd><button id="cd"></button></dd>
+					
+					
+					
+				</dl>
+			</section>
+			<footer>
+				<p>Copyright &copy; 2017 | Designed and Coded by Jean Morris | Exercises by w3resource.com</p>
+			</footer>
+		<!--</div>-->
+	</body>
+</html>
